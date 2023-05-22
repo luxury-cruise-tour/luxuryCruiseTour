@@ -95,5 +95,18 @@ nav a{
   color: inherit;
 }
 
+/* Error styles */
 
+.error{
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  margin: 100px auto;
+  max-width: 600px;
+  border: 1px solid #dd361c;
+  color: #dd361c;
+  border-radius: 20px;
 
+}
