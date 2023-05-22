@@ -7,7 +7,7 @@ const Navigation = () =>{
     const [toursLeft, setToursLeft] = useState(3);
 
     return(
-        <nav>
+        <nav className='wrapper'>
             <ul>
                 <li>
                     <Link to="/">Home</Link>
@@ -16,7 +16,7 @@ const Navigation = () =>{
                     <Link to="/tours">Tours</Link>
                 </li>
             </ul>
-            <p>You have {toursLeft} virtual tours left today!</p>
+            <p>You have <span>{toursLeft}</span> virtual tours left today!</p>
         </nav>
     )
 
