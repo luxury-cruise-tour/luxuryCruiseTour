@@ -1,0 +1,121 @@
+// Nav Component
+    // Nav component shows the NASA logo and a title "Intergalactic Tours." / "Luxury Space Cruise".
+	// Configure react router to navigate to Tours and Home component.
+	// Initialize a variable virtualToursLeft and set it to 3 and keep track of the remaining virtual tours for the day.
+	// Display the message “You have {virtualToursLeft} virtual tours left for today !” in the top right corner.
+
+// Home Component 
+    // This will serve as an Intro Component
+	// Display a branded Hero Img of Luxury Space Cruise
+		// Below it have an intro paragraph with a call to action button which will navigate to the main Tours Component.
+        "Welcome to our Virtual Space Tours!
+
+        Select a tour from our curated list and get ready to be mesmerized by stunning images and fascinating information. Step into the realm of discovery and expand your cosmic horizons. Remember, you have the opportunity to go on three virtual tours per day, so make each one count!
+
+        Where would you like to go? Let your curiosity guide you as we delve into the wonders of the universe."
+
+	// Install Axios, make a call to “GET https://api.nasa.gov/planetary/apod” and display the APOD for some visual interest. 
+
+// Tours Component
+    // Tours component will display a list of our Curated Tours:
+
+    List of Tours that we Offer:
+
+	1) Inner planets Tour: 
+		- Mercury
+		- Venus	
+		- Mars
+
+	2) Notable moons Tour:
+		-Ganymede : moon that orbits Jupiter
+		-Titan: Saturn’s largest moon
+		-Europa: also orbits Jupiter and has ocean and there’s potential for extraterrestrial life. 
+
+	3) Trans-Neptunian Tour
+		-Pluto
+		-Eris: dwarf planet located in Kuiper belt.
+		-Sedna: large and distant TNO, one of the most distant objects in the solar system. 
+		-Haumea: dwarf planet located in Kuiper belt.
+
+    // Structure of Tours component might look something like this:
+
+	const Tours = () => {
+ 		 return (
+    			<div>
+      				<h1>Tours</h1>
+      				<TourList />
+   			 </div>
+  		);
+	};
+
+	// TourList is hardcoded in which case could be stored in an array of objects:
+
+    // Strutcture of TourList component might look like this:
+
+	const TourList = () => {
+  		const tours = [
+    		{ id: 1, name: 'Inner planets Tour', location: [mercury,venus,mars], url:'image1.jpg'},
+    		{ id: 2, name: 'Notable moons Tour', location: [ganymede,titan,eruopa], url:'image2.jpg},
+    		{ id: 3, name: 'Trans-Neptunian Tour', location: [pluto, eris, sedna, haumea], url:'image3.jpg},
+        ]
+
+  	return (
+   		 	<div>
+      				{tours.map((tour) => (
+        				<h2>{tour.name}</h2>
+      					<p>Location: {tour.location}</p>
+                        <p>add more info??</p>
+                        <img src={tour.url/}
+     		 		))}
+   		 	</div>
+ 		 	);
+	};
+
+    // TourList Component should be clickable for the user, and we could even use static images for these to avoid unnecessary API calls
+	// Once a valid tour is selected, fetch one or more images by iterating over the array of locations and fetching the corresponding images using the NASA Image and Video Library (IVL) API.
+
+// Location Component  
+    // this is going to display images of the selected Tour. ie) Mercury, venus, mars.
+    // write a paragraph to indicate which image the user is looking at so they can choose where to go. 
+    // user can click on an image then AvailableTourDates component appears below.
+
+// AvailableTourDates Component
+    // Display an image with <h2>Available dates for a tour!</h2> and then an API call to show a list of say 3 dates.  These dates are returned by a second API call showing when that location is "free from any asteroid/near-earth object", because if there's asteroid it could blow up our space cruise!!
+	// By default the app will set the date range of 7 days.
+	// This will have a submit button "Book a tour" which will update the state of virtualToursLeft.
+    // Display a success message for the user "Congratulations! Your tour has been booked successfully."
+
+// Error handling Component 
+	// when a user selects a tour and if there’s no dates available dates within the date range, provide appropriate feedback to the user in case of errors. 
+		"Sorry, no available dates for the tour at the moment. The tour schedule is temporarily affected due to the presence of nearing asteroids. Please check back later for updated dates."
+
+// Set up CSS Files for styling
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from "react-router-dom";
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+// Stretch goals 
+
+    // adding calendar so that the user can choose their own date range for the tours   
+    // set up firebase to store the booked tours and other personal details related to their tours called "My Tours"
+    // add image carousel to display tour locations
