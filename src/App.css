@@ -1,6 +1,5 @@
 
 /* Color Palette: #105bd8 #dd361c #f4e6e8*/
-=======
 @import url('https://fonts.googleapis.com/css2?family=Maitree:wght@300;700&display=swap');
 
 /* Resets styles */
@@ -61,6 +60,21 @@ html { box-sizing: border-box; }
 
 *, *:before, *:after { box-sizing: inherit; }
 
+.locations {
+  display: flex;
+  flex-direction: column;
+}
+
+.locations img {
+  width: 600px;
+  padding: 25px 0;
+  margin: 0 auto;
+}
+
+.locations button {
+  width: 40%;
+  margin: 0 auto;
+
 /* Global styles */
 
 body{
@@ -111,5 +125,4 @@ nav a{
   border: 1px solid #dd361c;
   color: #dd361c;
   border-radius: 20px;
-
 }
