@@ -1,18 +1,31 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const Locations = () => {
 
-    
+// gets images for first tour , replicate for tour2 and tour3
+    let tourOne = [
+        "https://images-api.nasa.gov/search?q=mercury",
+        "https://images-api.nasa.gov/search?q=venus",
+        "https://images-api.nasa.gov/search?q=mars"
+    ];
 
-    axios({
-        url: "https://images-api.nasa.gov/search",
-        params: {
-           q: "inner planets"
-        }
-    }).then((res)=>{
-        console.log(res.data);
-    })
+    const requests = tourOne.map((url) => axios.get(url));
+
+    useEffect(()=>{
+        axios.all(requests).then((res)=>{
+            res.forEach((resp) => {
+                let images = {
+                  image: resp.data
+                }
+                console.log(images);
+            })
+        })
+    },[requests]);
+   
+
+
+    
 
 
     return(
