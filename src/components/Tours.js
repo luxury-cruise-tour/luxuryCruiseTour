@@ -1,36 +1,54 @@
+import { useState } from 'react';
+import marsImage from './../assets/image-mars.png';
 
 const Tours = () => {
+
+    const [activeLocation, setActiveLocation] = useState(0);
+
+    const tours = [
+        {
+          name: 'Mars',
+          image: marsImage,
+          description: "Don't forget to pack your hiking boots. You'll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It's two and a half times the size of Everest!",
+        },
+        {
+          name: 'Venus',
+          image: marsImage,
+          description: "Embark on an otherworldly adventure to Venus, the scorching hot paradise of our solar system. Brace yourself for the extreme temperatures that can melt lead, and immerse yourself in its dense atmosphere.",
+        },
+        {
+          name: 'Mercury',
+          image: marsImage,
+          description: "Prepare for an extraordinary journey to Mercury, the mysterious and elusive planet of our solar system. Experience the thrill of being the closest planet to the Sun, as you navigate through its extreme temperature variations.",
+        },
+      ];
+
+    const handleClick = (index) =>{
+        console.log("index:", index);
+        setActiveLocation(index);
+    }
+    
     return (
-        <h2>Tours</h2>
-    )
-}
-
-   //AvailableTours component then appears below the image with <h2>Available dates for a tour!</h2> and then an API call to show a list of say 3 dates.  These dates are returned by a second API call showing when that location is "free from any asteroid/near-earth object" (not sure of exactly what this means in relation to what the API returns).
-
-   // Tours Component
-    // Tours component will display a list of our Curated Tours:
-    // List of Tours that we Offer:
-    // 1) Inner planets Tour: 
-    //     - Mercury
-    //     - Venus 
-    //     - Mars
-    // 2) Notable moons Tour:
-    //     -Ganymede : moon that orbits Jupiter
-    //     -Titan: Saturn’s largest moon
-    //     -Europa: also orbits Jupiter and has ocean and there’s potential for extraterrestrial life. 
-    // 3) Trans-Neptunian Tour
-    //     -Pluto
-    //     -Eris: dwarf planet located in Kuiper belt.
-    //     -Sedna: large and distant TNO, one of the most distant objects in the solar system. 
-    //     -Haumea: dwarf planet located in Kuiper belt.
-    // // Structure of Tours component might look something like this:
-    // const Tours = () => {
-    //      return (
-    //             <div>
-    //                 <h1>Tours</h1>
-    //                 <TourList />
-    //          </div>
-    //     );
-    // };
+    <section className="tours wrapper">
+      <h2>Pick your destination</h2>
+        <h3>Inner Planets Tour</h3>
+      <div className="tours-container">
+        {tours.map((tour, index) => (
+          <div key={tour.name} className="tour-item">
+            <img src={tour.image}/>
+            <div className="tours-details">
+                <ul className="tours-locations">
+                    <li onClick={()=>{handleClick(index)}}>
+                    {tour.name}
+                    </li>
+                </ul>
+            <p>{index === activeLocation ? tours[activeLocation].description : ''}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    );
+};
 
 export default Tours;

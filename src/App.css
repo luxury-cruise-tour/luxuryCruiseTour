@@ -82,7 +82,7 @@ html { box-sizing: border-box; }
 
 body{
   font-family: 'Maitree', serif;
-  background: url('../public/assets/background-home-desktop.jpg') no-repeat;
+  background: url('./../src/assets/background-home-desktop.jpg') no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -176,7 +176,7 @@ body{
 /* Note:: class added for fixing nav: if Osman has added other styling ask him to add this line of code. */
 
 .About{
-  margin-top: 200px;
+  padding-top: 200px;
 }
 
 @media (max-width: 1300px){
@@ -200,6 +200,53 @@ body{
   }
 
 }
+
+@media (min-width: 1700px){
+
+  .logo::after{
+    width: 90%;
+  } 
+
+}
+
+/* Tours styles */
+
+.tours{
+  padding-top: 100px;
+  color: #f4e6e8;
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.tours h2{
+  margin-bottom: 100px;
+}
+
+.tours h3{
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.tours-container{
+  display: flex;
+  gap: 100px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.tours-locations{
+  display: flex;
+  margin-bottom: 50px;
+  gap: 30px;
+}
+
+.active{
+  display: block;
+}
+
+
+
 
 /* Error styles */
 

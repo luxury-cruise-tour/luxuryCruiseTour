@@ -18,6 +18,13 @@ const Navigation = () =>{
                 <li className="links">
                     <Link to="/tours">Tours</Link>
                 </li>
+                {/* stretch goals */}
+                {/* <li className="links">
+                    <Link to="/tours">Crew</Link>
+                </li>
+                <li className="links">
+                    <Link to="/tours">Technology</Link>
+                </li> */}
                 <li>
                     <p>You have <span>{toursLeft}</span> virtual tours left today!</p>
                 </li>
