@@ -169,6 +169,10 @@ body{
 
 @media (max-width: 1300px){
 
+  .logo::after{
+    width: 70%;
+  }
+
   .navigation ul{
     flex-wrap: wrap;
   }
