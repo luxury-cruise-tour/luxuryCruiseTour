@@ -60,6 +60,8 @@ html { box-sizing: border-box; }
 
 *, *:before, *:after { box-sizing: inherit; }
 
+/* Styles start here */
+
 .locations {
   display: flex;
   flex-direction: column;
@@ -85,7 +87,9 @@ body{
 }
 
 .wrapper{
-  width: 95%;
+  width: 90%;
+  max-width: 1440px;
+  margin: auto;
 }
 
 /* Navigation styles */
