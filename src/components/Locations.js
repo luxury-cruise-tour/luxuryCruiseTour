@@ -17,7 +17,7 @@ const Locations = () => {
     const tourOneRequests = tourOne.map((url) => axios.get(url));
 
 
-    useEffect(()=>{
+     useEffect(()=>{
         axios.all(tourOneRequests).then(axios.spread((data1,data2,data3)=>{
             const imageOne = (data1.data.collection);
             const imageTwo = (data2.data.collection);
@@ -28,11 +28,11 @@ const Locations = () => {
             setImageThree(imageThree);
 
         }))
-     
-    },[tourOneRequests]);
 
-    
-console.log(imageOne, imageTwo, imageThree);
+    },[tourOneRequests]);
+    console.log(imageOne, imageTwo, imageThree);
+
+
 
     // let tourTwo = [
     //     "https://images-api.nasa.gov/search?q=ganymede",
@@ -49,7 +49,7 @@ console.log(imageOne, imageTwo, imageThree);
     //             console.log(tourTwoImages);
     //         })
     //     })
-    // },[tourTwoRequests]);
+    // },[]);
 
     // let tourThree = [
     //     "https://images-api.nasa.gov/search?q=pluto",
@@ -66,18 +66,19 @@ console.log(imageOne, imageTwo, imageThree);
     //             console.log(tourThreeImages);
     //         })
     //     })
-    // },[tourThreeRequests]);
+    // },[]);
 
 
     return(
-        <div className="locations">
+        <section className="locations padding-top">
             <h2>Locations</h2>
-            <img src={imageOne.items[0].links[0].href} alt="" />
-            <img src={imageTwo.items[7].links[0].href} alt="" />
-            <img src={imageThree.items[72].links[0].href} alt="" />
+            <img src={imageOne.items[27].links[0].href} alt={imageOne.items[27].data[0].title} />
+            <img src={imageTwo.items[7].links[0].href} alt={imageTwo.items[7].data[0].title} />
+            <img src={imageThree.items[72].links[0].href} alt={imageThree.items[72].data[0].title} />
             <button> Book A Tour! </button>
-        </div>
+        </section>
       
     )
+
 }
 export default Locations;
