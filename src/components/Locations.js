@@ -9,14 +9,10 @@ const Locations = () => {
     const [imageTwo, setImageTwo] = useState([]);
     const [imageThree, setImageThree] = useState([]);
   
-
-const Locations = () => {
-
     const location = useLocation();
     const { tourValue } = location.state;
 
     console.log(tourValue);
-
 
 // gets images for first tour , replicate for tour2 and tour3
     let tourOne = [
