@@ -83,7 +83,7 @@ body{
   font-family: 'Maitree', serif;
   background: url('./../src/assets/background-home-desktop.jpg');
   background-size: cover;
-  width: 100%;
+  overflow-x: hidden;
   height: 100vh;
   position: relative;
 }
@@ -213,6 +213,49 @@ body{
 
 }
 
+@media (max-width: 800px){
+
+  .navigation{
+    left: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .logo::after{
+    display: none;
+  }
+
+  .navigation ul {
+    flex-wrap: nowrap;
+  }
+
+  .navigation li {
+    flex-grow: 1;
+  }
+
+  .navigation p {
+    white-space: normal;
+    flex-basis: 100%;
+    flex-grow: 2;
+  }
+
+  .navigation a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 30px;
+
+    transition: border-bottom .2s ease-in;
+  }
+  
+  .navigation a:hover{
+    border-bottom: 3px solid;
+    border-top: none;
+  }
+  
+
+}
+
 /* Tours styles */
 
 .tours{
@@ -321,16 +364,16 @@ body{
 
   .tours-description{
     position: absolute;
-    line-height: 1.5;
-    width: 500px;
+    line-height: 1.2;
+    min-width: 400px;
     padding-bottom: 100px;
     border-bottom: none;
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .tours-container button{
     left: 0;
-    top: 280px;
+    top: 250px;
   }
 
 }
