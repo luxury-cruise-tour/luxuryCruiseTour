@@ -21,7 +21,7 @@ function App() {
       {/* Routing Config */}
       <Routes>
         <Route path="/" element={<Home />}/> 
-        <Route path="/locations" element={<Locations />}/>
+        <Route path="/tours/locations" element={<Locations />}/>
         <Route path="/tours" element={<Tours />}/>
       </Routes>
 
