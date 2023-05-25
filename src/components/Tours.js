@@ -6,6 +6,10 @@ import mercuryImage from './../assets/image-mercury.png';
 import venusImage from './../assets/image-venus.png';
 import ganymedeImage from './../assets/image-ganymede.png';
 import titanImage from './../assets/image-titan.png';
+import europaImage from './../assets/image-europa.png';
+import plutoImage from './../assets/image-pluto.png';
+import erisImage from './../assets/image-eris.png';
+import sednaImage from './../assets/image-sedna.png';
 
 const Tours = () => {
 
@@ -17,16 +21,20 @@ const Tours = () => {
       Venus: venusImage,
       Ganymede: ganymedeImage,
       Titan: titanImage,
-      // Europa: ,
-      // Pluto: ,
-      // Eris: ,
-      // Sedna: ,
+      Europa: europaImage,
+      Pluto: plutoImage,
+      Eris: erisImage,
+      Sedna: sednaImage,
     }
+
     const [activeLocation, setActiveLocation] = useState(0);
     const [activeImage, setActiveImage] = useState(marsImage); 
 
     const [activeMoonLocation, setActiveMoonLocation] = useState(0);
     const [activeMoonImage, setActiveMoonImage] = useState(ganymedeImage);
+
+    const [activeTransLocation, setActiveTransLocation] = useState(0);
+    const [activeTransImage, setActiveTransImage] = useState(plutoImage); 
 
     const handleClick = (index, planet, tourNum) =>{
       if( tourNum === 1){
@@ -36,6 +44,9 @@ const Tours = () => {
       }else if ( tourNum === 2){
         setActiveMoonLocation(index);
         setActiveMoonImage(displayedImage[planet])
+      }else{
+        setActiveTransLocation(index);
+        setActiveTransImage(displayedImage[planet]);
       }
     }
     
@@ -95,14 +106,14 @@ const Tours = () => {
               transNeptunian.map((planet, index) => (
 
                 <div key={planet.name} className="tours-item">
-                  <img className="tours-image" src={activeImage} alt={planet.name}/>
+                  <img className="tours-image" src={activeTransImage} alt={planet.name}/>
                   <div className="tours-details">
                     <ul className="tours-locations">
                         <li onClick={()=>{handleClick(index, planet.name, 3)}}>
                         {planet.name}
                         </li>
                     </ul>
-                    <p className="tours-description">{index === activeLocation ? innerPlanets[activeLocation].description : ''} </p>
+                    <p className="tours-description">{index === activeLocation ? transNeptunian[activeTransLocation].description : ''} </p>
                   </div>
                 </div>
               ))}
