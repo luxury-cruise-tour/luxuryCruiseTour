@@ -4,6 +4,8 @@ import { Routes, Route } from 'react-router-dom';
 import Locations from './components/Locations';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
+import Error from './components/Error';
+import Dates from './components/Dates';
 import Tours from "./components/Tours";
 
 
@@ -13,6 +15,7 @@ function App() {
 
   return (
     <div className="App">
+
       <Navigation numOfTours={toursLeft} />  
 
       {/* Routing Config */}
@@ -21,6 +24,7 @@ function App() {
         <Route path="/locations" element={<Locations />}/>
         <Route path="/tours" element={<Tours />}/>
       </Routes>
+
     </div>
   );
 }
