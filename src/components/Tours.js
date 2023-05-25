@@ -5,8 +5,6 @@ import marsImage from './../assets/image-mars.png';
 import mercuryImage from './../assets/image-mercury.png';
 import venusImage from './../assets/image-venus.png';
 
-
-
 const Tours = () => {
 
     const { innerPlanets } = innerPlanetsData;

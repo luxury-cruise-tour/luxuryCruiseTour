@@ -1,5 +1,4 @@
 import axios from "axios";
-
 import { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 
@@ -39,8 +38,6 @@ const Locations = () => {
     },[tourOneRequests]);
     console.log(imageOne, imageTwo, imageThree);
 
-
-
     // let tourTwo = [
     //     "https://images-api.nasa.gov/search?q=ganymede",
     //     "https://images-api.nasa.gov/search?q=titan",
@@ -79,9 +76,9 @@ const Locations = () => {
     return(
         <section className="locations padding-top">
             <h2>Locations</h2>
-            <img src={imageOne.items[27].links[0].href} alt={imageOne.items[27].data[0].title} />
+            {/* <img src={imageOne.items[27].links[0].href} alt={imageOne.items[27].data[0].title} />
             <img src={imageTwo.items[7].links[0].href} alt={imageTwo.items[7].data[0].title} />
-            <img src={imageThree.items[72].links[0].href} alt={imageThree.items[72].data[0].title} />
+            <img src={imageThree.items[72].links[0].href} alt={imageThree.items[72].data[0].title} /> */}
             <button> Book A Tour! </button>
         </section>
       
