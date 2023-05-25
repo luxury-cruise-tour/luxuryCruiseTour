@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import innerPlanetsData from './../data/tours.json';
 import marsImage from './../assets/image-mars.png';
 import mercuryImage from './../assets/image-mercury.png';
 import venusImage from './../assets/image-venus.png';
+
 
 
 const Tours = () => {
@@ -43,6 +45,55 @@ const Tours = () => {
                   </div>
                 </div>
               ))}
+              <Link to="/locations" state={{ tourValue : 1 }}>
+                <button>View Details</button>
+              </Link>
+          </div>
+      </div>
+      <div className="tours-layout">
+        <h3>Inner Planets Tour</h3>
+          <div className="tours-container">
+            {
+              innerPlanets.map((planet, index) => (
+
+                <div key={planet.name} className="tours-item">
+                  <img className="tours-image" src={activeImage} alt={planet.name}/>
+                  <div className="tours-details">
+                    <ul className="tours-locations">
+                        <li onClick={()=>{handleClick(index, planet.name)}}>
+                        {planet.name}
+                        </li>
+                    </ul>
+                    <p className="tours-description">{index === activeLocation ? innerPlanets[activeLocation].description : ''} </p>
+                  </div>
+                </div>
+              ))}
+            <Link to="/locations" state={{ tourValue : 2 }}>
+              <button value="2">View Details</button>
+            </Link>
+          </div>
+      </div>
+      <div className="tours-layout">
+        <h3>Inner Planets Tour</h3>
+          <div className="tours-container">
+            {
+              innerPlanets.map((planet, index) => (
+
+                <div key={planet.name} className="tours-item">
+                  <img className="tours-image" src={activeImage} alt={planet.name}/>
+                  <div className="tours-details">
+                    <ul className="tours-locations">
+                        <li onClick={()=>{handleClick(index, planet.name)}}>
+                        {planet.name}
+                        </li>
+                    </ul>
+                    <p className="tours-description">{index === activeLocation ? innerPlanets[activeLocation].description : ''} </p>
+                  </div>
+                </div>
+              ))}
+            <Link to="/locations" state={{ tourValue : 3 }}>
+              <button value="3">View Details</button>
+            </Link>
           </div>
       </div>
     </section>

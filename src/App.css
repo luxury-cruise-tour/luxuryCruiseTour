@@ -235,12 +235,20 @@ body{
 .tours li{
   cursor: pointer;
   text-transform: uppercase;
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom .2s ease-in;
+}
+
+.tours li:hover{
+  border-bottom: 1px solid #f4e6e8;
 }
 
 .tours-container{
   display: flex;
   gap: 50px;
   width: 50%;
+  height: 700px;
   font-size: 20px;
   font-weight: 300;
   position: relative;
@@ -272,12 +280,24 @@ body{
   border-bottom: 1px solid #f4e6e8;
 }
 
+.tours-container button{
+  position: absolute;
+  right: 0;
+  top: 350px;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  background-color: #105bd8;
+  color:#f4e6e8;
+  padding: 10px 10px;
+  transition: all .2s ease-in;
+}
 
-
-
-
-
-
+.tours-container button:hover{
+  background-color: #f4e6e8;
+  color: #105bd8;
+}
 
 /* Error styles */
 
