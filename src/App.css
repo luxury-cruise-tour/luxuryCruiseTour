@@ -371,6 +371,10 @@ body{
     font-size: 18px;
   }
 
+  .tours-container{
+    height: 500px;
+  }
+  
   .tours-container button{
     left: 0;
     top: 250px;
