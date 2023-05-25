@@ -1,0 +1,24 @@
+{
+  "innerPlanets" :[
+    {
+      "name": "Mars",
+      "description": "Don't forget to pack your hiking boots. You'll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It's two and a half times the size of Everest!"
+    },
+    {
+      "name": "Venus",
+      "description": "Embark on an otherworldly adventure to Venus, the scorching hot paradise of our solar system. Brace yourself for the extreme temperatures that can melt lead, and immerse yourself in its dense atmosphere."
+    },
+    {
+      "name": "Mercury",
+      "description": "Prepare for an extraordinary journey to Mercury, the mysterious and elusive planet of our solar system. Experience the thrill of being the closest planet to the Sun, as you navigate through its extreme temperature variations."
+    }
+  ],
+  
+"notableMoons" :[],
+"transNeptunian" : []
+
+
+
+  
+
+}

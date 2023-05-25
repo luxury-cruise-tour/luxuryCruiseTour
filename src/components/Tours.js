@@ -1,51 +1,49 @@
 import { useState } from 'react';
+import innerPlanetsData from './../data/tours.json';
 import marsImage from './../assets/image-mars.png';
+import mercuryImage from './../assets/image-mercury.png';
+import venusImage from './../assets/image-venus.png';
+
 
 const Tours = () => {
 
+    const { innerPlanets } = innerPlanetsData;
     const [activeLocation, setActiveLocation] = useState(0);
+    const planetImage ={
+      Mars: marsImage,
+      Mercury: mercuryImage,
+      Venus: venusImage
+    }
+    const [activeImage, setActiveImage] = useState(marsImage); 
 
-    const tours = [
-        {
-          name: 'Mars',
-          image: marsImage,
-          description: "Don't forget to pack your hiking boots. You'll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It's two and a half times the size of Everest!",
-        },
-        {
-          name: 'Venus',
-          image: marsImage,
-          description: "Embark on an otherworldly adventure to Venus, the scorching hot paradise of our solar system. Brace yourself for the extreme temperatures that can melt lead, and immerse yourself in its dense atmosphere.",
-        },
-        {
-          name: 'Mercury',
-          image: marsImage,
-          description: "Prepare for an extraordinary journey to Mercury, the mysterious and elusive planet of our solar system. Experience the thrill of being the closest planet to the Sun, as you navigate through its extreme temperature variations.",
-        },
-      ];
-
-    const handleClick = (index) =>{
-        console.log("index:", index);
-        setActiveLocation(index);
+    const handleClick = (index, planet) =>{
+      console.log("clicked planet", index, planet);
+      setActiveLocation(index);
+      setActiveImage(planetImage[planet]);
     }
     
     return (
-    <section className="tours wrapper">
+    <section className="tours wrapper padding-top">
       <h2>Pick your destination</h2>
+      <div className="tours-layout">
         <h3>Inner Planets Tour</h3>
-      <div className="tours-container">
-        {tours.map((tour, index) => (
-          <div key={tour.name} className="tour-item">
-            <img src={tour.image}/>
-            <div className="tours-details">
-                <ul className="tours-locations">
-                    <li onClick={()=>{handleClick(index)}}>
-                    {tour.name}
-                    </li>
-                </ul>
-            <p>{index === activeLocation ? tours[activeLocation].description : ''}</p>
-            </div>
+          <div className="tours-container">
+            {
+              innerPlanets.map((planet, index) => (
+
+                <div key={planet.name} className="tours-item">
+                  <img className="tours-image" src={activeImage} alt={planet.name}/>
+                  <div className="tours-details">
+                    <ul className="tours-locations">
+                        <li onClick={()=>{handleClick(index, planet.name)}}>
+                        {planet.name}
+                        </li>
+                    </ul>
+                    <p className="tours-description">{index === activeLocation ? innerPlanets[activeLocation].description : ''} </p>
+                  </div>
+                </div>
+              ))}
           </div>
-        ))}
       </div>
     </section>
     );
