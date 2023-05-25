@@ -1,11 +1,22 @@
 import axios from "axios";
+
 import { useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom';
 
 const Locations = () => {
 
     const [imageOne, setImageOne] = useState([]);
     const [imageTwo, setImageTwo] = useState([]);
     const [imageThree, setImageThree] = useState([]);
+  
+
+const Locations = () => {
+
+    const location = useLocation();
+    const { tourValue } = location.state;
+
+    console.log(tourValue);
+
 
 // gets images for first tour , replicate for tour2 and tour3
     let tourOne = [
