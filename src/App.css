@@ -275,6 +275,7 @@ body{
   position: absolute;
   left: 0;
   line-height: 1.5;
+  height: 150px;
   padding-bottom: 100px;
   border-bottom: 1px solid #f4e6e8;
 }
@@ -282,7 +283,7 @@ body{
 .tours-container button{
   position: absolute;
   right: 0;
-  top: 350px;
+  top: 270px;
   cursor: pointer;
   font-family: inherit;
   border: none;

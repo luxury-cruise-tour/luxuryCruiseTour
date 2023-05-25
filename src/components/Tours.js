@@ -1,25 +1,42 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import innerPlanetsData from './../data/tours.json';
+import toursData from './../data/tours.json';
 import marsImage from './../assets/image-mars.png';
 import mercuryImage from './../assets/image-mercury.png';
 import venusImage from './../assets/image-venus.png';
+import ganymedeImage from './../assets/image-ganymede.png';
+import titanImage from './../assets/image-titan.png';
 
 const Tours = () => {
 
-    const { innerPlanets } = innerPlanetsData;
-    const [activeLocation, setActiveLocation] = useState(0);
-    const planetImage ={
+    const { innerPlanets, notableMoons, transNeptunian } = toursData;
+
+    const displayedImage ={
       Mars: marsImage,
       Mercury: mercuryImage,
-      Venus: venusImage
+      Venus: venusImage,
+      Ganymede: ganymedeImage,
+      Titan: titanImage,
+      // Europa: ,
+      // Pluto: ,
+      // Eris: ,
+      // Sedna: ,
     }
+    const [activeLocation, setActiveLocation] = useState(0);
     const [activeImage, setActiveImage] = useState(marsImage); 
 
-    const handleClick = (index, planet) =>{
-      console.log("clicked planet", index, planet);
-      setActiveLocation(index);
-      setActiveImage(planetImage[planet]);
+    const [activeMoonLocation, setActiveMoonLocation] = useState(0);
+    const [activeMoonImage, setActiveMoonImage] = useState(ganymedeImage);
+
+    const handleClick = (index, planet, tourNum) =>{
+      if( tourNum === 1){
+        console.log(index , "first one");
+        setActiveLocation(index);
+        setActiveImage(displayedImage[planet]);
+      }else if ( tourNum === 2){
+        setActiveMoonLocation(index);
+        setActiveMoonImage(displayedImage[planet])
+      }
     }
     
     return (
@@ -35,7 +52,7 @@ const Tours = () => {
                   <img className="tours-image" src={activeImage} alt={planet.name}/>
                   <div className="tours-details">
                     <ul className="tours-locations">
-                        <li onClick={()=>{handleClick(index, planet.name)}}>
+                        <li onClick={()=>{handleClick(index, planet.name, 1)}}>
                         {planet.name}
                         </li>
                     </ul>
@@ -49,20 +66,20 @@ const Tours = () => {
           </div>
       </div>
       <div className="tours-layout">
-        <h3>Inner Planets Tour</h3>
+        <h3>Notable Moons Tour</h3>
           <div className="tours-container">
             {
-              innerPlanets.map((planet, index) => (
+              notableMoons.map((planet, index) => (
 
                 <div key={planet.name} className="tours-item">
-                  <img className="tours-image" src={activeImage} alt={planet.name}/>
+                  <img className="tours-image" src={activeMoonImage} alt={planet.name}/>
                   <div className="tours-details">
                     <ul className="tours-locations">
-                        <li onClick={()=>{handleClick(index, planet.name)}}>
+                        <li onClick={()=>{handleClick(index, planet.name, 2)}}>
                         {planet.name}
                         </li>
                     </ul>
-                    <p className="tours-description">{index === activeLocation ? innerPlanets[activeLocation].description : ''} </p>
+                    <p className="tours-description">{index === activeLocation ? innerPlanets[activeMoonLocation].description : ''} </p>
                   </div>
                 </div>
               ))}
@@ -72,16 +89,16 @@ const Tours = () => {
           </div>
       </div>
       <div className="tours-layout">
-        <h3>Inner Planets Tour</h3>
+        <h3>Trans-Neptunian Tour</h3>
           <div className="tours-container">
             {
-              innerPlanets.map((planet, index) => (
+              transNeptunian.map((planet, index) => (
 
                 <div key={planet.name} className="tours-item">
                   <img className="tours-image" src={activeImage} alt={planet.name}/>
                   <div className="tours-details">
                     <ul className="tours-locations">
-                        <li onClick={()=>{handleClick(index, planet.name)}}>
+                        <li onClick={()=>{handleClick(index, planet.name, 3)}}>
                         {planet.name}
                         </li>
                     </ul>
