@@ -175,8 +175,21 @@ body{
 
 /* Note:: class added for fixing nav: if Osman has added other styling ask him to add this line of code. */
 
+.Hero {
+  color: #fff;
+}
+
 .About{
   padding-top: 200px;
+  color: #fff;
+}
+
+.POD {
+  color: #fff;
+}
+
+.Dates {
+  color: #fff;
 }
 
 /* later add this to all components for fixed menu */

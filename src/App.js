@@ -16,7 +16,8 @@ function App() {
   return (
     <div className="App">
 
-      <Navigation numOfTours={toursLeft} />  
+      <Navigation numOfTours={toursLeft} />
+      <Dates />
 
       {/* Routing Config */}
       <Routes>
