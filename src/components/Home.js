@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router';
 import Dates from './Dates';
 import { Link } from 'react-router-dom';
-import ChooseDates from './chooseDates/ChooseDates';
+import ChooseDates from './ChooseDates';
 
 const Home = () => {
 
