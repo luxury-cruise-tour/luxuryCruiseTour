@@ -1,6 +1,7 @@
 import "./chooseDates.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBed, faRocket, faCalendarDays, faPerson, faCar, faTaxi, } from "@fortawesome/free-solid-svg-icons";
+
+import { faBed, faRocket, faCalendarDays, faPerson, faUserAstronaut, } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
 import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main css file
@@ -55,20 +56,14 @@ const ChooseDates = ({type}) => {
                     </div>
                     <div className="headerListItem">
                     <FontAwesomeIcon icon={faRocket} />
-                        <span>Flights</span>
+                        <span>Cruises</span>
                     </div>
+
                     <div className="headerListItem">
-                        <FontAwesomeIcon icon={faCar} />
-                        <span>Car rentals</span>
-                    </div>
-                    <div className="headerListItem">
-                        <FontAwesomeIcon icon={faBed} />
+                        <FontAwesomeIcon icon={faUserAstronaut} />
                         <span>Attractions</span>
                     </div>
-                    <div className="headerListItem">
-                        <FontAwesomeIcon icon={faTaxi} />
-                        <span>Airport taxis</span>
-                    </div>
+                
                 </div>
                 {
                     // 
