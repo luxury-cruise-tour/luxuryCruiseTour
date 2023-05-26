@@ -1,6 +1,5 @@
 import "./chooseDates.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faBed, faRocket, faCalendarDays, faPerson, faUserAstronaut, } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
 import { DateRange } from "react-date-range";
@@ -69,6 +68,7 @@ const ChooseDates = ({type}) => {
                     // 
                  type !== "list" &&
                     <>
+                    {/* h1 and p should be moved to Home.js */}
                     <h1 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h1>
                     <p className="headerDescription">With FTL travel, your destination is <b>relatively</b> in a blink of an eye.</p>
                     <button className="headerBtn">Sign in / Register</button>
@@ -78,6 +78,7 @@ const ChooseDates = ({type}) => {
                         <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faBed} className="headerIcon" />
                         <input type="text" placeholder="Where are you going?" className="headerSearchInput"/>
+                        {/* user's location choice will show up here */}
                         </div>
 
 
@@ -86,7 +87,6 @@ const ChooseDates = ({type}) => {
                         <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                         {/* onClick will change state, setOpenDate will be the opposite of openDate */}
                         <span onClick={()=> setOpenDate(!openDate)}  className="headerSearchText">{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(date[0].endDate, "dd/MM/yyyy")}`}</span>
-                        {/* onChange will change  */}
                         {/* when openDate is true, display DateRange */}
                         {openDate && 
                             <DateRange
@@ -95,6 +95,7 @@ const ChooseDates = ({type}) => {
                                 moveRangeOnFirstSelection={false}
                                 ranges={date}
                                 className="date"
+                                // tileDisabled = {anything before newDate() and all asteroid API dates}
                             />
                                 }
                         </div>
@@ -184,7 +185,9 @@ const ChooseDates = ({type}) => {
                             </div>}
 
                             <div className="headerSearchItem">
-                                <button className="headerBtn">Search</button>
+                                {/* onClick event alert when confirmed */}
+                                {/* run TourLeft function to change state, from App.js. Pass through Location.js via prop drill */}
+                                <button className="headerBtn">Confirm</button>
                             </div>
                         </div>
                     </div>
