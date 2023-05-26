@@ -1,4 +1,3 @@
-import "./chooseDates.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed, faRocket, faCalendarDays, faPerson, faUserAstronaut, } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
