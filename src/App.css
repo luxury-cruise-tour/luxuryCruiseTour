@@ -90,12 +90,6 @@ html { box-sizing: border-box; }
   transition: all .2s ease-in;
 }
 
-.locations button:hover{
-  background-color: #f4e6e8;
-  color: #105bd8;
-}
-
-
 /* Global styles */
 
 body{
@@ -275,7 +269,6 @@ body{
     border-top: none;
   }
   
-
 }
 
 /* Tours styles */
@@ -360,7 +353,8 @@ body{
   transition: all .2s ease-in;
 }
 
-.tours-container button:hover{
+.tours-container button:hover, 
+.locations button:hover{
   background-color: #f4e6e8;
   color: #105bd8;
 }
