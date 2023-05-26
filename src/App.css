@@ -90,12 +90,6 @@ html { box-sizing: border-box; }
   transition: all .2s ease-in;
 }
 
-.locations button:hover{
-  background-color: #f4e6e8;
-  color: #105bd8;
-}
-
-
 /* Global styles */
 
 body{
@@ -151,6 +145,10 @@ body{
   left: 120px;
 }
 
+.hamburger-icon{
+  display: none;
+}
+
 .navigation ul{
   display: flex;
   align-items: center;
@@ -193,6 +191,23 @@ body{
 .navigation a:hover{
   border-bottom: 3px solid;
 }
+
+.mobile-menu{
+  display: none;
+}
+
+.navigation-overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .7;
+  background-color: #000;
+  z-index: 10;
+}
+
 
 /* Note:: class added for fixing nav: if Osman has added other styling ask him to add this line of code. */
 
@@ -251,44 +266,47 @@ body{
 @media (max-width: 800px){
 
   .navigation{
-    left: 0;
-    width: 100%;
-    padding: 0;
+    padding: 20px 0;
+    font-size: 20px;
+    z-index: 100;
+    position: fixed;
+    left: 50%;
+    width: 90%;
   }
-
-  .logo::after{
+  
+  .logo::after,
+  .navigation ul::after,
+  .navigation ul
+  {
     display: none;
   }
 
-  .navigation ul {
-    flex-wrap: nowrap;
+  .hamburger-icon{
+    display: block;
+    cursor: pointer;
   }
 
-  .navigation li {
-    flex-grow: 1;
+  .hide{
+    display: none;
   }
 
-  .navigation p {
-    white-space: normal;
-    flex-basis: 100%;
-    flex-grow: 2;
+  .mobile-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: -10;
+    padding-top: 300px;
   }
 
-  .navigation a{
-    text-transform: uppercase;
-    text-decoration: none;
-    color: inherit;
-    padding-bottom: 30px;
-
-    transition: border-bottom .2s ease-in;
+  .mobile-menu div {
+    padding-top: 30px;
   }
-  
-  .navigation a:hover{
-    border-bottom: 3px solid;
-    border-top: none;
+
+  .show{
+    display: block;
   }
   
-
 }
 
 /* Tours styles */
@@ -373,7 +391,8 @@ body{
   transition: all .2s ease-in;
 }
 
-.tours-container button:hover{
+.tours-container button:hover, 
+.locations button:hover{
   background-color: #f4e6e8;
   color: #105bd8;
 }
@@ -383,8 +402,7 @@ body{
   .tours{
     display: flex;
     flex-direction: column;
-    justify-content: unsafe;
-    align-items: center;
+    padding-left: 100px;
   }
 
   .tours-layout{
@@ -415,6 +433,45 @@ body{
     top: 250px;
   }
 
+}
+
+@media (max-width: 600px){
+
+  .tours{
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 430px){
+
+  .tours-container {
+    height: 400px;
+    gap:10px;
+  }
+
+  .tours-locations li {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .tours h2{
+    display: none;
+  }
+  
+  .tours-description {
+    min-width: 300px;
+    padding-bottom: 20px;
+    border-bottom: none;
+    font-size: 16px;
+  }
+
+  .tours li {
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .2s ease-in;
+  }
 }
 
 /* Error styles */

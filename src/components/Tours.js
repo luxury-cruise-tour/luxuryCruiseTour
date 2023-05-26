@@ -39,76 +39,75 @@ const Tours = () => {
 
   const handleClick = (index, planet, tourNum) => {
     if (tourNum === 1) {
-      console.log(index, "first one");
       setActiveLocation(index);
       setActiveImage(displayedImage[planet]);
     } else if (tourNum === 2) {
       setActiveMoonLocation(index);
-      setActiveMoonImage(displayedImage[planet])
+      setActiveMoonImage(displayedImage[planet]);
     } else {
       setActiveTransLocation(index);
       setActiveTransImage(displayedImage[planet]);
     }
   }
 
-      const [imageOne, setImageOne] = useState([]);
-      const [imageTwo, setImageTwo] = useState([]);
-      const [imageThree, setImageThree] = useState([]);
-      const [imageFour, setImageFour] = useState([]);
-      const [imageFive, setImageFive] = useState([]);
-      const [imageSix, setImageSix] = useState([]);
-      const [imageSeven, setImageSeven] = useState([]);
-      const [imageEight, setImageEight] = useState([]);
-      const [imageNine, setImageNine] = useState([]);
+  const [imageOne, setImageOne] = useState([]);
+  const [imageTwo, setImageTwo] = useState([]);
+  const [imageThree, setImageThree] = useState([]);
+  const [imageFour, setImageFour] = useState([]);
+  const [imageFive, setImageFive] = useState([]);
+  const [imageSix, setImageSix] = useState([]);
+  const [imageSeven, setImageSeven] = useState([]);
+  const [imageEight, setImageEight] = useState([]);
+  const [imageNine, setImageNine] = useState([]);
 
-      let tours = [
-        "https://images-api.nasa.gov/search?q=mercury",
-        "https://images-api.nasa.gov/search?q=venus",
-        "https://images-api.nasa.gov/search?q=mars",
-        "https://images-api.nasa.gov/search?q=ganymede",
-        "https://images-api.nasa.gov/search?q=titan",
-        "https://images-api.nasa.gov/search?q=europa",
-        "https://images-api.nasa.gov/search?q=pluto",
-        "https://images-api.nasa.gov/search?q=eris",
-        "https://images-api.nasa.gov/search?q=sedna",
-      ];
+  let tours = [
+    "https://images-api.nasa.gov/search?q=mercury",
+    "https://images-api.nasa.gov/search?q=venus",
+    "https://images-api.nasa.gov/search?q=mars",
+    "https://images-api.nasa.gov/search?q=ganymede",
+    "https://images-api.nasa.gov/search?q=titan",
+    "https://images-api.nasa.gov/search?q=europa",
+    "https://images-api.nasa.gov/search?q=pluto",
+    "https://images-api.nasa.gov/search?q=eris",
+    "https://images-api.nasa.gov/search?q=sedna",
+  ];
 
-      const tourOneRequests = tours.map((url) => axios.get(url));
+  const tourOneRequests = tours.map((url) => axios.get(url));
 
-      async function getImages() {
+  async function getImages() {
 
-        await axios.all(tourOneRequests).then(axios.spread((data1, data2, data3, data4, data5, data6, data7, data8, data9) => {
-          const imageOne = (data1.data.collection);
-          const imageTwo = (data2.data.collection);
-          const imageThree = (data3.data.collection);
-          const imageFour = (data4.data.collection);
-          const imageFive = (data5.data.collection);
-          const imageSix = (data6.data.collection);
-          const imageSeven = (data7.data.collection);
-          const imageEight = (data8.data.collection);
-          const imageNine = (data9.data.collection);
+    await axios.all(tourOneRequests).then(axios.spread((data1, data2, data3, data4, data5, data6, data7, data8, data9) => {
+      const imageOne = (data1.data.collection);
+      const imageTwo = (data2.data.collection);
+      const imageThree = (data3.data.collection);
+      const imageFour = (data4.data.collection);
+      const imageFive = (data5.data.collection);
+      const imageSix = (data6.data.collection);
+      const imageSeven = (data7.data.collection);
+      const imageEight = (data8.data.collection);
+      const imageNine = (data9.data.collection);
 
-          setImageOne(imageOne);
-          setImageTwo(imageTwo);
-          setImageThree(imageThree);
-          setImageFour(imageFour);
-          setImageFive(imageFive);
-          setImageSix(imageSix);
-          setImageSeven(imageSeven);
-          setImageEight(imageEight);
-          setImageNine(imageNine);
+      setImageOne(imageOne);
+      setImageTwo(imageTwo);
+      setImageThree(imageThree);
+      setImageFour(imageFour);
+      setImageFive(imageFive);
+      setImageSix(imageSix);
+      setImageSeven(imageSeven);
+      setImageEight(imageEight);
+      setImageNine(imageNine);
 
-        })).catch((error) => {
-          console.log(error)
-          alert("NASA API is taking a break, even computers need rest! Try again in 60 seconds")
-        })
-      }
+    })).catch((error) => {
+      console.log(error)
+      alert("NASA API is taking a break, even computers need rest! Try again in 60 seconds")
+    })
+  }
 
-      useEffect(() => {
-        getImages();
-      });
+  useEffect(() => {
+    getImages();
+  });
 
-      const toursInfo = [imageOne, imageTwo, imageThree, imageFour, imageFive, imageSix, imageSeven, imageEight, imageNine];
+  const toursInfo = [imageOne, imageTwo, imageThree, imageFour, imageFive, imageSix, imageSeven, imageEight, imageNine];
 
 
       return (
