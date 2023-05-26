@@ -1,5 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router';
+import Dates from './Dates';
+import { Link } from 'react-router-dom';
+import ChooseDates from './chooseDates/ChooseDates';
 
 const Home = () => {
 
@@ -38,12 +42,17 @@ const Home = () => {
         </header>
         <section className='About'>
             <h2>Info about YBS Galactic Tours</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus id reiciendis asperiores deserunt totam inventore commodi hic est vel voluptatibus porro, nobis temporibus sapiente. Ipsa illum distinctio minus nesciunt est!</p>
         </section>
+        <ChooseDates />
         <section className='POD'>
             <h1>{photo.title}</h1>
             <p>{photo.explanation}</p>
             <img src={photo.url} alt={photo.title} />
+        </section>
+        <section className='Dates'>
+          <h1>Available Dates!</h1>
+          {/* <Link to="/dates"><Dates /></Link> */}
+         
         </section>
         </div>
     </div>

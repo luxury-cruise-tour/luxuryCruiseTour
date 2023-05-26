@@ -5,7 +5,6 @@
     // Display a success message for the user "Congratulations! Your tour has been booked successfully."
     // Are we going to let the user book the same tour multiple times? 
 
-    import Navigation from "./Navigation";
     import Error from "./Error";
     import { Link } from "react-router-dom";
     import React, {useEffect, useState} from "react";
@@ -28,19 +27,29 @@
                 }
             })
             .then((result) => {
-                //  console.log("Dates rendered")
-                console.log(result.data)
+                // console.log(result.data.close_approach_data)
+                const asteroidObj = result.data.close_approach_data;
+                
+                for (let key in asteroidObj) {
+                    const trueDates = [];
+                    const badDates = (asteroidObj[key].close_approach_date)
+                    console.log(badDates)
+
+                    // disable dates based on badDates (function tileDisabled)
+                }
+
             })
         }, [])
 
-        // const disabledDates = [ tomorrow, in3Days, in5Days ]
-        // function tileDisabled( { date, view } ){
-        //     // Disable tiles in month view only
-        //     if( view === 'asteroid variable') {
-        //         // Check if a date React-Calender wants to check is on the list od disabled dates
-        //         return disabledDates.find(dDate => isSameDay(dDate, date));
-        //     }
-        // }
+
+        const tileDisabled = ({ activeStartDate, badDates, date, view }) => {
+            return date < new Date()
+            // Disable tiles in month view only
+            // if( view === 'asteroid variable') {
+            //     // Check if a date React-Calender wants to check is on the list od disabled dates
+            //     return disabledDates.find(dDate => isSameDay(dDate, date));
+            // }
+        }
 
 
 
@@ -53,10 +62,13 @@
     //  give this calendar a 'tileDisabled' property. Pass a function that'll let you disable close_approach_dates: [close_approach_date_fully] and the past (before new Date())
         return (
            <section className="dates padding-top" >
-            <Calendar 
+
+          <h1>Choose Available Dates!</h1>
+
+            <Calendar
             onChange={onChange}
             value={value}
-            // tileDisabled={tileDisabled}
+            tileDisabled={tileDisabled}
              />
            </section>
         );
