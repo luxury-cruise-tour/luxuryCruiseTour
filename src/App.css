@@ -145,6 +145,10 @@ body{
   left: 120px;
 }
 
+.hamburger-icon{
+  display: none;
+}
+
 .navigation ul{
   display: flex;
   align-items: center;
@@ -187,6 +191,7 @@ body{
 .navigation a:hover{
   border-bottom: 3px solid;
 }
+
 
 /* Note:: class added for fixing nav: if Osman has added other styling ask him to add this line of code. */
 
@@ -232,41 +237,28 @@ body{
 @media (max-width: 800px){
 
   .navigation{
-    left: 0;
-    width: 100%;
-    padding: 0;
+    padding: 20px 0;
+    font-size: 20px;
+    z-index: 100;
+    position: fixed;
+    left: 50%;
+    width: 90%;
   }
-
-  .logo::after{
+  
+  .logo::after,
+  .navigation ul::after,
+  .navigation ul
+  {
     display: none;
   }
 
-  .navigation ul {
-    flex-wrap: nowrap;
+  .hamburger-icon{
+    display: block;
+    cursor: pointer;
   }
 
-  .navigation li {
-    flex-grow: 1;
-  }
-
-  .navigation p {
-    white-space: normal;
-    flex-basis: 100%;
-    flex-grow: 2;
-  }
-
-  .navigation a{
-    text-transform: uppercase;
-    text-decoration: none;
-    color: inherit;
-    padding-bottom: 30px;
-
-    transition: border-bottom .2s ease-in;
-  }
-  
-  .navigation a:hover{
-    border-bottom: 3px solid;
-    border-top: none;
+  .hide{
+    display: none;
   }
   
 }
