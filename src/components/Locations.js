@@ -1,10 +1,11 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 
 const Locations = () => {
 
     const location = useLocation();
     const { tourValue } = location.state;
-
     const innerplanet = useLocation();
     const { images } = innerplanet.state;
 
@@ -46,4 +47,5 @@ const Locations = () => {
         )
     }
 }
+
 export default Locations;

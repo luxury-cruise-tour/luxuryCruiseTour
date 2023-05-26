@@ -1,11 +1,57 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import innerPlanetsData from './../data/tours.json';
+import toursData from './../data/tours.json';
 import marsImage from './../assets/image-mars.png';
 import mercuryImage from './../assets/image-mercury.png';
 import venusImage from './../assets/image-venus.png';
-import axios from 'axios';
+import ganymedeImage from './../assets/image-ganymede.png';
+import titanImage from './../assets/image-titan.png';
+import europaImage from './../assets/image-europa.png';
+import plutoImage from './../assets/image-pluto.png';
+import erisImage from './../assets/image-eris.png';
+import sednaImage from './../assets/image-sedna.png';
 
+const Tours = () => {
+
+    const { innerPlanets, notableMoons, transNeptunian } = toursData;
+
+    const displayedImage ={
+      Mars: marsImage,
+      Mercury: mercuryImage,
+      Venus: venusImage,
+      Ganymede: ganymedeImage,
+      Titan: titanImage,
+      Europa: europaImage,
+      Pluto: plutoImage,
+      Eris: erisImage,
+      Sedna: sednaImage,
+    }
+
+    const [activeLocation, setActiveLocation] = useState(0);
+    const [activeImage, setActiveImage] = useState(marsImage); 
+
+    const [activeMoonLocation, setActiveMoonLocation] = useState(0);
+    const [activeMoonImage, setActiveMoonImage] = useState(ganymedeImage);
+
+    const [activeTransLocation, setActiveTransLocation] = useState(0);
+    const [activeTransImage, setActiveTransImage] = useState(plutoImage); 
+
+    const handleClick = (index, planet, tourNum) =>{
+      if( tourNum === 1){
+        console.log(index , "first one");
+        setActiveLocation(index);
+        setActiveImage(displayedImage[planet]);
+      }else if ( tourNum === 2){
+        setActiveMoonLocation(index);
+        setActiveMoonImage(displayedImage[planet])
+      }else{
+        setActiveTransLocation(index);
+        setActiveTransImage(displayedImage[planet]);
+      }
+    }
+    
+    return (
 
 const Tours = () => {
 
@@ -89,10 +135,24 @@ const Tours = () => {
       <h2>Pick your destination</h2>
       <div className="tours-layout">
         <h3>Inner Planets Tour</h3>
+          <div className="tours-container">
+            {
+              innerPlanets.map((planet, index) => (
+
+                <div key={planet.name} className="tours-item">
+                  <img className="tours-image" src={activeImage} alt={planet.name}/>
+                  <div className="tours-details">
+                    <ul className="tours-locations">
+                        <li onClick={()=>{handleClick(index, planet.name, 1)}}>
+                        {planet.name}
+                        </li>
+                    </ul>
+                    <p className="tours-description">{index === activeLocation ? innerPlanets[activeLocation].description : ''} </p>
+                  </div>
+
         <div className="tours-container">
           {
             innerPlanets.map((planet, index) => (
-
               <div key={planet.name} className="tours-item">
                 <img className="tours-image" src={activeImage} alt={planet.name} />
                 <div className="tours-details">
@@ -102,6 +162,7 @@ const Tours = () => {
                     </li>
                   </ul>
                   <p className="tours-description">{index === activeLocation ? innerPlanets[activeLocation].description : ''} </p>
+
                 </div>
               </div>
             ))}
@@ -111,6 +172,21 @@ const Tours = () => {
         </div>
       </div>
       <div className="tours-layout">
+        <h3>Notable Moons Tour</h3>
+          <div className="tours-container">
+            {
+              notableMoons.map((planet, index) => (
+
+                <div key={planet.name} className="tours-item">
+                  <img className="tours-image" src={activeMoonImage} alt={planet.name}/>
+                  <div className="tours-details">
+                    <ul className="tours-locations">
+                        <li onClick={()=>{handleClick(index, planet.name, 2)}}>
+                        {planet.name}
+                        </li>
+                    </ul>
+                    <p className="tours-description">{index === activeLocation ? innerPlanets[activeMoonLocation].description : ''} </p>
+                  </div>
         <h3>Inner Planets Tour</h3>
         <div className="tours-container">
           {
@@ -134,11 +210,24 @@ const Tours = () => {
         </div>
       </div>
       <div className="tours-layout">
+        <h3>Trans-Neptunian Tour</h3>
+          <div className="tours-container">
+            {
+              transNeptunian.map((planet, index) => (
+                <div key={planet.name} className="tours-item">
+                  <img className="tours-image" src={activeTransImage} alt={planet.name}/>
+                  <div className="tours-details">
+                    <ul className="tours-locations">
+                        <li onClick={()=>{handleClick(index, planet.name, 3)}}>
+                        {planet.name}
+                        </li>
+                    </ul>
+                    <p className="tours-description">{index === activeLocation ? transNeptunian[activeTransLocation].description : ''} </p>
+                  </div>
         <h3>Inner Planets Tour</h3>
         <div className="tours-container">
           {
             innerPlanets.map((planet, index) => (
-
               <div key={planet.name} className="tours-item">
                 <img className="tours-image" src={activeImage} alt={planet.name} />
                 <div className="tours-details">

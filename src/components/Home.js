@@ -29,7 +29,7 @@ const Home = () => {
 
 
   return (
-    <div className="Home">
+    <div className="Home padding-top">
       <div className="wrapper">
         <header>
             <div className="Hero">

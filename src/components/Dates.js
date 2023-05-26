@@ -66,7 +66,6 @@
 
 // Consider installing Moment package to get current date, if new Date() isn't working?
 
-
 // To support a dynamic list of disabled dates based on asteroids, move tileDisabled function to Dates function body. Use useCallback and update tileDisabled function only if necessary?
 // Compare dates (isSameDay) example below:
 //     import { differenceInCalendarDays } from 'date-fns';
