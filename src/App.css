@@ -389,6 +389,7 @@ body{
   .tours{
     display: flex;
     flex-direction: column;
+    padding-left: 100px;
   }
 
   .tours-layout{
@@ -419,6 +420,36 @@ body{
     top: 250px;
   }
 
+}
+
+@media (max-width: 600px){
+
+  .tours{
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 430px){
+
+  .tours h2{
+    display: none;
+  }
+  
+  .tours-description {
+
+    min-width: 300px;
+    padding-bottom: 20px;
+    border-bottom: none;
+    font-size: 16px;
+  }
+
+  .tours li {
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .2s ease-in;
+  }
 }
 
 /* Error styles */
