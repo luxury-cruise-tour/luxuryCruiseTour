@@ -21,7 +21,7 @@
             axios({
                 url: "https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=" + apiKey,
                 param: {
-                    key: apiKey,
+                    api_key: apiKey,
                     start_date: '',
                     end_date: ''
                 }
