@@ -192,6 +192,22 @@ body{
   border-bottom: 3px solid;
 }
 
+.mobile-menu{
+  display: none;
+}
+
+.navigation-overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .7;
+  background-color: #000;
+  z-index: 10;
+}
+
 
 /* Note:: class added for fixing nav: if Osman has added other styling ask him to add this line of code. */
 
@@ -259,6 +275,23 @@ body{
 
   .hide{
     display: none;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: -10;
+    padding-top: 300px;
+  }
+
+  .mobile-menu div {
+    padding-top: 30px;
+  }
+
+  .show{
+    display: block;
   }
   
 }
@@ -356,8 +389,6 @@ body{
   .tours{
     display: flex;
     flex-direction: column;
-    justify-content: unsafe;
-    align-items: center;
   }
 
   .tours-layout{
