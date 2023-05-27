@@ -30,7 +30,7 @@ const Home = () => {
       {/* From about is my code */}
           <p>so, you want to travel to</p>
           <h2>space,</h2>
-          <img className="pod-img" src={photo.url} alt={photo.title} />
+          {/* <img className="pod-img" src={photo.url} alt={photo.title} /> */}
           <div className="about-container">
             <div className="about">
                 <p>Let's face it: if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well, sit back and relax because we'll give you a truly out-of-this-world experience!</p>
