@@ -24,8 +24,6 @@ const Home = () => {
     })
   }, [])
 
-
-
   return (
     <div className="Home padding-top">
       <div className="wrapper">

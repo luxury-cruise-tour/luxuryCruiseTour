@@ -77,7 +77,7 @@ const ChooseDates = ({type}) => {
                         <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faBed} className="headerIcon" />
                         <input type="text" placeholder="Where are you going?" className="headerSearchInput"/>
-                        {/* user"s location choice will show up here */}
+                        {/* user's location choice will show up here */}
                         </div>
 
 

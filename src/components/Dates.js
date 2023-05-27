@@ -59,7 +59,7 @@
         setValue(nextValue);
      }
 
-    //  give this calendar a "tileDisabled" property. Pass a function that"ll let you disable close_approach_dates: [close_approach_date_fully] and the past (before new Date())
+    //  give this calendar a "tileDisabled" property. Pass a function that'll let you disable close_approach_dates: [close_approach_date_fully] and the past (before new Date())
         return (
            <section className="dates padding-top" >
 
