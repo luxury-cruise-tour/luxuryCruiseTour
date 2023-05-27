@@ -1,5 +1,5 @@
 /* Color Palette: #105bd8 #dd361c #f4e6e8*/
-@import url('https://fonts.googleapis.com/css2?family=Maitree:wght@300;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Maitree:wght@300;700&display=swap");
 
 /* Resets styles */
 html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
@@ -45,7 +45,7 @@ blockquote, q {
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
+	content: "";
 	content: none;
 }
 table {
@@ -61,40 +61,11 @@ html { box-sizing: border-box; }
 
 /* Styles start here */
 
-.locations {
-  display: flex;
-  flex-direction: column;
-  color: #f4e6e8;
-  font-weight: 700;
-  font-size: 35px;
-  text-align: center;
-}
-
-.locations img {
-  width: 600px;
-  padding: 25px 0;
-  margin: 0 auto;
-}
-
-.locations button {
-  width: 20%;
-  font-size: 1.2rem;
-  margin: 0 auto;
-  cursor: pointer;
-  font-family: inherit;
-  border: none;
-  border-radius: 10px;
-  background-color: #105bd8;
-  color:#f4e6e8;
-  padding: 10px 10px;
-  transition: all .2s ease-in;
-}
-
 /* Global styles */
 
 body{
-  font-family: 'Maitree', serif;
-  background: url('./../src/assets/background-home-desktop.jpg');
+  font-family: "Maitree", serif;
+  background: url("./../src/assets/background-home-desktop.jpg");
   background-size: cover;
   overflow-x: hidden;
   background-repeat: no-repeat;
@@ -158,7 +129,7 @@ body{
 }
 
 .navigation ul::after{
-  content: '';
+  content: "";
   width: 100%;
   height: 100px;
   background-color: #f4e6e8;
@@ -211,22 +182,14 @@ body{
 
 /* Note:: class added for fixing nav: if Osman has added other styling ask him to add this line of code. */
 
-.Hero {
+.Hero, .POD, .Dates, .About {
   color: #fff;
 }
 
 .About{
   padding-top: 200px;
-  color: #fff;
 }
 
-.POD {
-  color: #fff;
-}
-
-.Dates {
-  color: #fff;
-}
 
 /* later add this to all components for fixed menu */
 .padding-top{
@@ -305,6 +268,10 @@ body{
 
   .show{
     display: block;
+  }
+
+  .padding-top {
+    padding-top: 100px
   }
   
 }
@@ -442,7 +409,7 @@ body{
   }
 }
 
-@media (max-width: 430px){
+@media (max-width: 440px){
 
   .tours-container {
     height: 400px;
@@ -455,7 +422,7 @@ body{
   }
 
   .tours h2{
-    display: none;
+    font-size: 1.6rem;
   }
   
   .tours-description {
@@ -471,6 +438,81 @@ body{
     padding: 10px 0;
     border-bottom: 1px solid transparent;
     transition: border-bottom .2s ease-in;
+  }
+}
+
+/* Locations Styles */
+.locations {
+  display: flex;
+  flex-direction: column;
+  color: #f4e6e8;
+  font-weight: 700;
+  font-size: 35px;
+  text-align: center;
+}
+
+.locations img {
+  width: 600px;
+  padding: 25px 0;
+  margin: 0 auto;
+}
+
+.locations h2 {
+  margin-bottom: 50px;
+  padding: 10px 25px;
+}
+
+.locations button {
+  width: 20%;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  background-color: #105bd8;
+  color:#f4e6e8;
+  padding: 10px 10px;
+  transition: all .2s ease-in;
+}
+
+.locations button:disabled {
+  width: 20%;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  background-color: darkgrey;
+  color:#dd361c;
+  padding: 10px 10px;
+  transition: all .2s ease-in;
+}
+
+@media(max-width: 900px) {
+  .locations h2 {
+    margin: 25px 0;
+  }
+}
+
+@media (max-width: 690px) {
+  .locations img {
+    width: 400px;
+  }
+  .locations button,
+  .locations button:disabled {
+    width: 30%;
+  }
+}
+
+@media (max-width: 450px) {
+  .locations img {
+    width: 280px;
+  }
+  .locations button,
+  .locations button:disabled {
+    width: 40%;
   }
 }
 
@@ -511,18 +553,18 @@ body{
 
 .errorPage-container img{
   padding-top: 40px;
-  animation: floating 4s ease-in-out infinite;
+  animation: floating 8s ease-in-out infinite;
 }
 
 @keyframes floating{
   0% {
-    transform: translateY(-20px);
+    transform: translateX(-40%);
   }
   50% {
-    transform: translateY(20px);
+    transform: translateX(40%);
   }
   100% {
-    transform: translateY(-20px);
+    transform: translateX(-40%);
   }
 }
 

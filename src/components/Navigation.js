@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 const Navigation = ({numOfTours}) =>{
@@ -8,7 +8,6 @@ const Navigation = ({numOfTours}) =>{
 
     const handleClick = () =>{
         setMenuIsOpen(!menuIsOpen);
-        console.log("yoyo")
     }
 
     return(

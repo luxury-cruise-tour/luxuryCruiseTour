@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import toursData from './../data/tours.json';
-import marsImage from './../assets/image-mars.png';
-import mercuryImage from './../assets/image-mercury.png';
-import venusImage from './../assets/image-venus.png';
-import ganymedeImage from './../assets/image-ganymede.png';
-import titanImage from './../assets/image-titan.png';
-import europaImage from './../assets/image-europa.png';
-import plutoImage from './../assets/image-pluto.png';
-import erisImage from './../assets/image-eris.png';
-import sednaImage from './../assets/image-sedna.png';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import toursData from "./../data/tours.json";
+import marsImage from "./../assets/image-mars.png";
+import mercuryImage from "./../assets/image-mercury.png";
+import venusImage from "./../assets/image-venus.png";
+import ganymedeImage from "./../assets/image-ganymede.png";
+import titanImage from "./../assets/image-titan.png";
+import europaImage from "./../assets/image-europa.png";
+import plutoImage from "./../assets/image-pluto.png";
+import erisImage from "./../assets/image-eris.png";
+import sednaImage from "./../assets/image-sedna.png";
 
 const Tours = () => {
 
@@ -98,7 +98,6 @@ const Tours = () => {
       setImageNine(imageNine);
 
     })).catch((error) => {
-      console.log(error)
       alert("NASA API is taking a break, even computers need rest! Try again in 60 seconds")
     })
   }
@@ -148,7 +147,7 @@ const Tours = () => {
                             {planet.name}
                             </li>
                         </ul>
-                        <p className="tours-description">{index === activeLocation ? innerPlanets[activeMoonLocation].description : ""} </p>
+                        <p className="tours-description">{index === activeLocation ? notableMoons[activeMoonLocation].description : ""} </p>
                       </div>
                     </div>
                   ))}
