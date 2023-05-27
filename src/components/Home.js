@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router";
 import { Link } from "react-router-dom";
 import ChooseDates from "./ChooseDates";
+import companyLogo from "./../assets/companyLogo.png";
 
 const Home = () => {
 
@@ -30,6 +31,7 @@ const Home = () => {
         <header>
             <div className="Hero">
                 <h1>YBS Galactic Tours</h1>
+                <img src={companyLogo} alt="Company Logo"/>
             </div>
         </header>
         <section className="About">
