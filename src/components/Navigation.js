@@ -8,13 +8,16 @@ const Navigation = ({numOfTours}) =>{
 
     const handleClick = () =>{
         setMenuIsOpen(!menuIsOpen);
-        console.log("yoyo")
     }
 
     return(
         <>
             <div className={`navigation-overlay ${menuIsOpen ? "show" : ""}`}></div>
+ 
             <nav className="navigation">
+                <div className="tour-count">
+                    <p>You have <span>{numOfTours}</span> virtual tours left today!</p>
+                </div>
                 <div className="logo">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><g fill="none" fillRule="evenodd"><circle cx="24" cy="24" r="24" fill="#FFF"/><path fill="#0B0D17" d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"/></g></svg>
                 </div>
@@ -39,9 +42,6 @@ const Navigation = ({numOfTours}) =>{
                     </div>
                     <div className="links" onClick={handleClick}>
                         <Link to="/tours">Tours</Link>
-                    </div>
-                    <div>
-                        <p>You have <span>{numOfTours}</span> virtual tours left today!</p>
                     </div>
                 </div>
             </nav>
