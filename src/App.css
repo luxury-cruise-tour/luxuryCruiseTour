@@ -306,6 +306,10 @@ body{
   .show{
     display: block;
   }
+
+  .navigation a:hover {
+     border: none;
+  }
   
 }
 
@@ -413,8 +417,12 @@ body{
     padding-left: 100px;
   }
 
+  .tours h2{
+    display: none;
+  }
+
   .tours-layout{
-    left:0;
+    left: 0;
   }
 
   .tours-image {
