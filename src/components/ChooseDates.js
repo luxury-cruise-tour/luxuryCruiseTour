@@ -2,8 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed, faRocket, faCalendarDays, faPerson, faUserAstronaut, } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
 import { DateRange } from "react-date-range";
-import 'react-date-range/dist/styles.css'; // main css file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
 import { useState } from "react";
 import format from "date-fns/format";
 
@@ -18,7 +18,7 @@ const ChooseDates = ({type}) => {
         {
         startDate: new Date(),
         endDate: new Date(),
-        key: 'selection'
+        key: "selection"
         }
     ]);
     
@@ -68,7 +68,7 @@ const ChooseDates = ({type}) => {
                  type !== "list" &&
                     <>
                     {/* h1 and p should be moved to Home.js */}
-                    <h1 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h1>
+                    <h2 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h2>
                     <p className="headerDescription">With FTL travel, your destination is <b>relatively</b> in a blink of an eye.</p>
                     <button className="headerBtn">Sign in / Register</button>
                     <div className="headerSearch">

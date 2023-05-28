@@ -1,4 +1,4 @@
-import engineerImg from './../assets/image-engineer.png';
+import engineerImg from "./../assets/image-engineer.png";
 
 const ErrorPage = () =>{
     return(
