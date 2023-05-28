@@ -1,30 +1,87 @@
-import "./chooseDates.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed, faRocket, faCalendarDays, faPerson, faUserAstronaut, } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
 import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import format from "date-fns/format";
+import { Link, useLocation} from "react-router-dom";
 
 // Establish a prop for Header, type=list
-const ChooseDates = ({type}) => {
+const currentDate = new Date();
+const disabledDates = [new Date(2023, 4, 30)];
 
-    // useState to hide and unhide calendar
-    const [ openDate, setOpenDate] = useState(false)
+const ChooseDates = () => {
+    const location = useLocation();
+    const { destination } = location.state;
+    
+    console.log(destination)
+    const [ asteroid, setAsteroid ] = useState([]);
+    const [ disabledDates, setDisabledDates ] = useState([]);
+
+    useEffect( () => {
+        const apiKey = '8Lvb0B5h7UkA2AojSbHeEvziOx5bwrXm9FfkQsuN';
+
+        axios({
+            url: "https://api.nasa.gov/neo/rest/v1/neo/3542519?",
+            params: {
+                api_key: apiKey,
+                start_date: date.startDate,
+                end_date: date.endDate
+            }
+        })
+        .then((result) => {
+            // console.log(result.data.close_approach_data)
+            const asteroidObj = result.data.close_approach_data;
+            console.log(asteroidObj)
+            const disabledDates = asteroidObj.map((data) => new Date(data.close_approach_date))
+            console.log(disabledDates)
+            // for (let key in asteroidObj) {
+            //     const trueDates = [];
+            //     const badDates = (asteroidObj[key].close_approach_date)
+            //     console.log(badDates)
+            //     // setAsteroid(badDates)
+            //     // console.log(date.startDate)
+            //     // console.log(date.endDate)
+
+            //     // disable dates based on badDates (function tileDisabled)
+                
+            // }
+
+            setDisabledDates(disabledDates)
+        })
+    }, [])
+
+
+
+    // useState to hide and unhide calendar. Set to false
+    const [ openDate, setOpenDate] = useState(true)
+    // useState to hide and unhide bookings. Set to false
+    const [ openOptions, setOpenOptions] = useState(false)
 
     // useState for date selection
     const [date, setDate] = useState([
         {
-        startDate: new Date(),
+        startDate: new Date(), 
         endDate: new Date(),
         key: 'selection'
         }
     ]);
+
+    // State variable to store selected dates
+    // const [ selectedDates, setSelectedDates ] = useState({
+    //     startDate: new Date(),
+    //     endDate: new Date(),
+    // })
     
-    // useState to hide and unhide bookings
-    const [ openOptions, setOpenOptions] = useState(false)
+    function onChange (date) {
+        setDate([date.selection])
+        // console.log(date.selection)
+        // console.log(selectedDates)
+    }
+
     
     // useState to change people and room bookings
     const [ options, setOptions] = useState({
@@ -43,11 +100,17 @@ const ChooseDates = ({type}) => {
         });
     };
 
+    // // Unavailable Dates
+    // const tileDisabled = ({ activeStartDate, date, view }) => {
+    //     return date < new Date()
+    // }
 
+    // console.log(asteroid)
     return (
-        <div className="header">
+        <div className="header padding-top">
             {/* conditional className headerContainer to switch styling based on "list" prop */}
-            <div className={type === "list" ? "headerContainer listMode" : "headerContainer"}>
+            {/* <div className={type === "list" ? "headerContainer listMode" : "headerContainer"}> */}
+            <div className="headerContainer">
                 <div className="headerList">
                     <div className="headerListItem active">
                         <FontAwesomeIcon icon={faBed} />
@@ -66,19 +129,18 @@ const ChooseDates = ({type}) => {
                 </div>
                 {
                     // 
-                 type !== "list" &&
+                //  type !== "list" &&
                     <>
                     {/* h1 and p should be moved to Home.js */}
-                    <h1 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h1>
-                    <p className="headerDescription">With FTL travel, your destination is <b>relatively</b> in a blink of an eye.</p>
-                    <button className="headerBtn">Sign in / Register</button>
+                        <h1 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h1>
+                        <p className="headerDescription">With FTL travel, your destination is <b>relatively</b> in a blink of an eye.</p>
+                        <button className="headerBtn">Sign in / Register</button>
                     <div className="headerSearch">
-
                         {/* Destination */}
                         <div className="headerSearchItem">
-                        <FontAwesomeIcon icon={faBed} className="headerIcon" />
-                        <input type="text" placeholder="Where are you going?" className="headerSearchInput"/>
-                        {/* user's location choice will show up here */}
+                            <FontAwesomeIcon icon={faBed} className="headerIcon" />
+                            <input type="text" placeholder= {destination} className="headerSearchInput"/>
+                            {/* user's location choice will show up here */}
                         </div>
 
 
@@ -86,16 +148,20 @@ const ChooseDates = ({type}) => {
                         <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                         {/* onClick will change state, setOpenDate will be the opposite of openDate */}
-                        <span onClick={()=> setOpenDate(!openDate)}  className="headerSearchText">{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(date[0].endDate, "dd/MM/yyyy")}`}</span>
+                        <span onClick={()=> setOpenDate(openDate)}  className="headerSearchText">{`${format(date[0].startDate, "yyyy/MM/dd")} to ${format(date[0].endDate, "yyyy/MM/dd")}`}</span>
                         {/* when openDate is true, display DateRange */}
                         {openDate && 
                             <DateRange
                                 editableDateInputs={true}
-                                onChange={item => setDate([item.selection])}
+                                // onChange={date => setDate([date.selection])}
+                                onChange={onChange}
+                                value={date}
                                 moveRangeOnFirstSelection={false}
                                 ranges={date}
                                 className="date"
-                                // tileDisabled = {anything before newDate() and all asteroid API dates}
+                                minDate={currentDate}
+                                // tileDisabled = {badDates}
+                                disabledDates={disabledDates}
                             />
                                 }
                         </div>

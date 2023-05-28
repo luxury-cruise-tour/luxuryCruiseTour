@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router';
 import Dates from './Dates';
 import { Link } from 'react-router-dom';
-import ChooseDates from './chooseDates/ChooseDates';
+import ChooseDates from './ChooseDates';
 
 const Home = () => {
 
@@ -43,17 +43,17 @@ const Home = () => {
         <section className='About'>
             <h2>Info about YBS Galactic Tours</h2>
         </section>
-        <ChooseDates />
+        {/* <ChooseDates /> */}
         <section className='POD'>
             <h1>{photo.title}</h1>
             <p>{photo.explanation}</p>
             <img src={photo.url} alt={photo.title} />
         </section>
-        <section className='Dates'>
-          <h1>Available Dates!</h1>
+        {/* <section className='Dates'> */}
+          {/* <h1>Available Dates!</h1> */}
           {/* <Link to="/dates"><Dates /></Link> */}
          
-        </section>
+        {/* </section> */}
         </div>
     </div>
   );
