@@ -422,7 +422,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: .7;
+  opacity: .8;
   background-color: #000;
   z-index: 10;
 }
@@ -645,8 +645,15 @@ body {
   color: #105bd8;
 }
 
-@media (max-width:900px) {
+.tour-count{
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display:none;
+}
 
+@media (max-width:900px){
   .tours {
     display: flex;
     flex-direction: column;
@@ -683,15 +690,23 @@ body {
 
 }
 
-@media (max-width: 600px) {
+@media (max-width:800px){
+  .tour-count{
+    display: block;
+  }
 
+  .tour-count p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px){
   .tours {
     padding-left: 0;
   }
 }
 
 @media (max-width: 440px) {
-
   .tours-container {
     height: 400px;
     gap: 10px;
