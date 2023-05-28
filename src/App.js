@@ -20,7 +20,7 @@ function App() {
       {/* Routing Config */}
       <Routes>
         <Route path="/" element={<Home />}/> 
-        <Route path="/tours/locations/dates" element={<ChooseDates />}/>
+        <Route path="/tours/locations/dates" element={<ChooseDates toursLeft={toursLeft} setToursLeft={setToursLeft} />}/>
         <Route path="/tours/locations" element={<Locations />}/>
         <Route path="/tours" element={<Tours />}/>
         {/* <Route path="*" element={<ErrorPage/>}/> */}

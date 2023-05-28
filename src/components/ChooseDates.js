@@ -13,11 +13,11 @@ import { Link, useLocation} from "react-router-dom";
 const currentDate = new Date();
 const disabledDates = [new Date(2023, 4, 30)];
 
-const ChooseDates = () => {
+const ChooseDates = ({toursLeft, setToursLeft}) => {
     const location = useLocation();
     const { destination } = location.state;
     
-    console.log(destination)
+    console.log(destination, setToursLeft)
     const [ asteroid, setAsteroid ] = useState([]);
     const [ disabledDates, setDisabledDates ] = useState([]);
 
@@ -99,6 +99,15 @@ const ChooseDates = () => {
             };
         });
     };
+
+    const confirmTour = () => {
+        
+        if (toursLeft == 0) {
+            return false
+            
+        }
+        setToursLeft(toursLeft-1)
+    }
 
     // // Unavailable Dates
     // const tileDisabled = ({ activeStartDate, date, view }) => {
@@ -253,7 +262,7 @@ const ChooseDates = () => {
                             <div className="headerSearchItem">
                                 {/* onClick event alert when confirmed */}
                                 {/* run TourLeft function to change state, from App.js. Pass through Location.js via prop drill */}
-                                <button className="headerBtn">Confirm</button>
+                                <button className="headerBtn" onClick={confirmTour}>Confirm</button>
                             </div>
                         </div>
                     </div>
