@@ -1,46 +1,46 @@
 {
   "innerPlanets" :[
     {
-      "name": "Mars",
-      "description": "Don't forget to pack your hiking boots. You'll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It's two and a half times the size of Everest!"
+      "name": "Mercury",
+      "description": "First stop... Mercury! Travel the mysterious and elusive planet of our solar system. Experience the thrill of being the closest planet to the Sun, as we visit the volcainic plains in the southern region." 
     },
     {
       "name": "Venus",
-      "description": "Embark on an otherworldly adventure to Venus, the scorching hot paradise of our solar system. Brace yourself for the extreme temperatures that can melt lead, and immerse yourself in its dense atmosphere."
+      "description": "Next up is the adventure to Venus -the Lada Terra Region, the scorching hot environment will always be a thrill no matter when you visit. Brace yourself for the extreme temperatures that can melt lead, and immerse yourself in its dense atmosphere."
     },
     {
-      "name": "Mercury",
-      "description": "Prepare for an extraordinary journey to Mercury, the mysterious and elusive planet of our solar system. Experience the thrill of being the closest planet to the Sun, as you navigate through its extreme temperature variations."
+      "name": "Mars",
+      "description":"Lastly, we will vist Mars. This is where we will see the sections that are effected by frost, and if we have enough time we will also visit Olympus Mons, the tallest planetary mountain in our solar system. It's two and a half times the size of Everest!"
     }
   ],
   
 "notableMoons" :[
   {
     "name": "Ganymede",
-    "description": "Our virtual tour will transport you to the jewel of Jupiter, where you'll float amidst the enchanting splendor of Ganymede's icy landscapes."
+    "description": "The first destination for the tour will transport you to the jewel of Jupiter, where you'll float amidst the enchanting splendor of Ganymede's icy landscapes."
   },
   {
     "name": "Titan",
-    "description": "Journey to Titan, the ethereal moon of Saturn, where the allure of the unknown beckons. Immerse yourself in a virtual tour that unveils the grandeur of Titan's mesmerizing landscapes."
+    "description": "Next up is Titan, the ethereal moon of Saturn, where the allure of the unknown beckons. Immerse yourself in a environment that unveils the grandeur of Titan's mesmerizing landscapes."
   },
   {
     "name": "Europa",
-    "description": "Delve into the mysteries of Europa's subsurface depths, where the tantalizing prospect of extraterrestrial life lingers."
+    "description": "Lastly, we will dive into the mysteries of Europa's subsurface depths, where the tantalizing prospect of extraterrestrial life lingers upon the ridges hills and domes."
   }
 
 ],
 "transNeptunian" : [
   {
     "name": "Pluto",
-    "description": "Encounter the dwarf planet Pluto, a celestial marvel boasting icy plains and towering mountains, revealing its majestic resilience in the face of the unknown."
+    "description": "On this tour, (most popular) - Encounter the dwarf planet Pluto, a celestial marvel boasting icy plains and towering mountains, revealing its majestic resilience in the face of the unknown."
   },
   {
     "name": "Eris",
-    "description": "Uncover the secrets of Eris, a distant world that challenges our understanding with its eccentric orbit and icy surface."
+    "description": "Next up, we will uncover the secrets of Eris, a distant world that challenges our understanding with its eccentric orbit and icy surface."
   },
   {
     "name": "Sedna",
-    "description": "Brace yourself for a captivating voyage to the depths of cosmic mystery, where Sedna's icy embrace beckons the curious and the adventurous."
+    "description": "Finally, brace yourself for a captivating voyage to the depths of cosmic mystery, where Sedna's icy embrace beckons the curious and the adventurous."
   }
 ]
 

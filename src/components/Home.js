@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+=======
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router";
+import { Link } from "react-router-dom";
+import ChooseDates from "./ChooseDates";
+import companyLogo from "./../assets/companyLogo.png";
+>>>>>>> development
 
 const Home = () => {
 
