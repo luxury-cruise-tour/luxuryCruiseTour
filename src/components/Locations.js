@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import React, { useState } from 'react';
 
 const Locations = ({toursLeft}) => {
