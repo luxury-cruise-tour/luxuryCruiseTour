@@ -112,20 +112,20 @@ const Tours = () => {
       return (
         <section className= "tours wrapper padding-top">
           <h2>Pick your destination</h2>
-          <div className="tours-layout">
+          <div className="toursLayout">
             <h3>Inner Planets Tour</h3>
-              <div className="tours-container">
+              <div className="toursContainer">
                 {
                   innerPlanets.map((planet, index) => (
-                    <div key={planet.name} className="tours-item">
-                      <img className="tours-image" src={activeImage} alt={planet.name}/>
-                      <div className="tours-details">
-                        <ul className="tours-locations">
+                    <div key={planet.name} className="toursItem">
+                      <img className="toursImage" src={activeImage} alt={planet.name}/>
+                      <div className="toursDetails">
+                        <ul className="toursLocations">
                             <li onClick={()=>{handleClick(index, planet.name, 1)}}>
                             {planet.name}
                             </li>
                         </ul>
-                        <p className="tours-description">{index === activeLocation ? innerPlanets[activeLocation].description : ""} </p>
+                        <p className="toursDescription">{index === activeLocation ? innerPlanets[activeLocation].description : ""} </p>
                       </div>
                     </div>
                   ))}
@@ -134,20 +134,20 @@ const Tours = () => {
                   </Link>
               </div>
           </div>
-          <div className="tours-layout">
+          <div className="toursLayout">
             <h3>Notable Moons Tour</h3>
-              <div className="tours-container">
+              <div className="toursContainer">
                 {
                   notableMoons.map((planet, index) => (
-                    <div key={planet.name} className="tours-item">
-                      <img className="tours-image" src={activeMoonImage} alt={planet.name}/>
-                      <div className="tours-details">
-                        <ul className="tours-locations">
+                    <div key={planet.name} className="toursItem">
+                      <img className="toursImage" src={activeMoonImage} alt={planet.name}/>
+                      <div className="toursDetails">
+                        <ul className="toursLocations">
                             <li onClick={()=>{handleClick(index, planet.name, 2)}}>
                             {planet.name}
                             </li>
                         </ul>
-                        <p className="tours-description">{index === activeLocation ? notableMoons[activeMoonLocation].description : ""} </p>
+                        <p className="toursDescription">{index === activeLocation ? notableMoons[activeMoonLocation].description : ""} </p>
                       </div>
                     </div>
                   ))}
@@ -156,20 +156,20 @@ const Tours = () => {
                 </Link>
               </div>
           </div>
-          <div className="tours-layout">
+          <div className="toursLayout">
             <h3>Trans-Neptunian Tour</h3>
-              <div className="tours-container">
+              <div className="toursContainer">
                 {
                   transNeptunian.map((planet, index) => (
                     <div key={planet.name} className="tours-item">
-                      <img className="tours-image" src={activeTransImage} alt={planet.name}/>
-                      <div className="tours-details">
-                        <ul className="tours-locations">
+                      <img className="toursImage" src={activeTransImage} alt={planet.name}/>
+                      <div className="toursDetails">
+                        <ul className="toursLocations">
                             <li onClick={()=>{handleClick(index, planet.name, 3)}}>
                             {planet.name}
                             </li>
                         </ul>
-                        <p className="tours-description">{index === activeLocation ? transNeptunian[activeTransLocation].description : ""} </p>
+                        <p className="toursDescription">{index === activeLocation ? transNeptunian[activeTransLocation].description : ""} </p>
                       </div>
                     </div>
                   ))}
