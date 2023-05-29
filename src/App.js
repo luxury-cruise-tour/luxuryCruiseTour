@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Locations from './components/Locations';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
-// import ErrorPage from './components/ErrorPage';
+import ErrorPage from './components/ErrorPage';
 import Tours from './components/Tours';
 import ChooseDates from './components/ChooseDates';
 
@@ -23,7 +23,7 @@ function App() {
         <Route path="/tours/locations/dates" element={<ChooseDates toursLeft={toursLeft} setToursLeft={setToursLeft} />}/>
         <Route path="/tours/locations" element={<Locations />}/>
         <Route path="/tours" element={<Tours />}/>
-        {/* <Route path="*" element={<ErrorPage/>}/> */}
+        <Route path="*" element={<ErrorPage/>}/>
       </Routes>
 
     </div>

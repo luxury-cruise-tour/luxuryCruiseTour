@@ -11,13 +11,13 @@ import { Link, useLocation} from "react-router-dom";
 
 // Establish a prop for Header, type=list
 const currentDate = new Date();
-const disabledDates = [new Date(2023, 4, 30)];
+// const disabledDates = [new Date(2023, 4, 30)];
 
 const ChooseDates = ({toursLeft, setToursLeft}) => {
     const location = useLocation();
     const { destination } = location.state;
     
-    console.log(destination, setToursLeft)
+    // console.log(destination, setToursLeft)
     const [ asteroid, setAsteroid ] = useState([]);
     const [ disabledDates, setDisabledDates ] = useState([]);
 
@@ -35,7 +35,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
         .then((result) => {
             // console.log(result.data.close_approach_data)
             const asteroidObj = result.data.close_approach_data;
-            console.log(asteroidObj)
+            // console.log(asteroidObj)
             const disabledDates = asteroidObj.map((data) => new Date(data.close_approach_date))
             console.log(disabledDates)
             // for (let key in asteroidObj) {
@@ -80,7 +80,11 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
         setDate([date.selection])
         // console.log(date.selection)
         // console.log(selectedDates)
+        // console.log(date.selection)
     }
+
+    // date.selection.startDate
+    // date.selection.endDate
 
     
     // useState to change people and room bookings
@@ -89,6 +93,39 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
         children: 0,
         room: 1
     })
+
+    // user: [
+    //     dates: {
+    //         startDate: '',
+    //         endDate: ''
+    //         // push setDate
+    //     },
+    //     options: {
+    //         adult: '',
+    //         children: '',
+    //         room: ''
+    //     },
+    //     tour: 0
+    // ]
+
+    // users: tours> dates+options
+    
+    // persist selected dates to Firebase, append to innerHTML container
+
+//     var start = new Date().getTime()
+// var end = new Date(start + 86400*1000 * 10).getTime()
+
+// var days = [];
+// for (var i = start ; i < end ; i += 86400 * 1000) {
+// 	days.push(new Date(i));
+// }
+
+// Converting days into intervals (86,400 (seconds in a day) * 1000 (milliseconds) and then 10 days (an example) ). getTime() is right now
+// Make a days array, and run for loop where it returns as many days fit into said loop (example 10 days)
+// and then pushes this array to Firebase
+// This allows us to be able to quantify the date selection, as opposed to only returning the start and end dates
+
+
 
     // function to run through onClick for increase and decrease buttons
     const handleOption = (name, operation) => {
@@ -101,10 +138,8 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
     };
 
     const confirmTour = () => {
-        
         if (toursLeft == 0) {
             return false
-            
         }
         setToursLeft(toursLeft-1)
     }
@@ -169,7 +204,6 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                                 ranges={date}
                                 className="date"
                                 minDate={currentDate}
-                                // tileDisabled = {badDates}
                                 disabledDates={disabledDates}
                             />
                                 }
