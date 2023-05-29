@@ -95,6 +95,17 @@ body {
   z-index: 1;
 }
 
+.locations button, .headerBtn, .toursContainer button{
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  background-color: #105bd8;
+  color: #f4e6e8;
+  padding: 10px 10px;
+  transition: all .2s ease-in;
+}
+
 /* Navigation styles */
 
 .navigation {
@@ -452,18 +463,10 @@ body {
   position: absolute;
   right: 0;
   top: 350px;
-  cursor: pointer;
-  font-family: inherit;
-  border: none;
-  border-radius: 10px;
-  background-color: #105bd8;
-  color: #f4e6e8;
-  padding: 10px 10px;
-  transition: all .2s ease-in;
 }
 
 .toursContainer button:hover,
-.locations button:hover {
+.locations button:hover, .headerBtn:hover {
   background-color: #f4e6e8;
   color: #105bd8;
 }
@@ -581,18 +584,14 @@ body {
   padding: 10px 25px;
 }
 
-.locations button {
+.locations button, .headerBtn{
   width: 20%;
   font-size: 1.2rem;
   margin: 40px auto 100px;
-  cursor: pointer;
-  font-family: inherit;
-  border: none;
-  border-radius: 10px;
-  background-color: #105bd8;
-  color: #f4e6e8;
-  padding: 10px 10px;
-  transition: all .2s ease-in;
+}
+
+.headerBtn{
+  width: fit-content;
 }
 
 .locations button:disabled {
@@ -695,6 +694,19 @@ body {
   animation: floating 8s ease-in-out infinite;
 }
 
+@media (max-width: 400px){
+
+  .errorPageContainer h2 {
+    font-size: 40px;
+  }
+
+  .errorPageContainer p {
+    font-size: 20px;
+  }
+
+
+}
+
 @keyframes floating {
   0% {
     transform: translateX(-40%);
@@ -750,14 +762,14 @@ body {
   margin: 20px 0;
 }
 
-.headerBtn {
+/* .headerBtn {
   background-color: transparent;
   color: white;
   font-weight: 500;
   border: none;
   padding: 10px;
   cursor: pointer;
-}
+} */
 
 .headerSearch {
   height: 30px;

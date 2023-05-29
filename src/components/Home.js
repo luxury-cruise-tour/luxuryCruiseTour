@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import companyLogo from "./../assets/companyLogo.png";
 
 const Home = () => {

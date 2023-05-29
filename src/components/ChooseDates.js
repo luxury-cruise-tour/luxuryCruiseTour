@@ -3,28 +3,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed, faRocket, faCalendarDays, faPerson, faUserAstronaut, } from "@fortawesome/free-solid-svg-icons";
 import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css';
-import 'react-date-range/dist/theme/default.css'; 
+import 'react-date-range/dist/theme/default.css'; // theme css file
 import { useState, useEffect } from "react";
 import format from "date-fns/format";
 import { useLocation} from "react-router-dom";
 
 const currentDate = new Date();
+const apiKey = '8Lvb0B5h7UkA2AojSbHeEvziOx5bwrXm9FfkQsuN';
 
 const ChooseDates = ({toursLeft, setToursLeft}) => {
+
     const location = useLocation();
     const { destination } = location.state;
-    
     const [ disabledDates, setDisabledDates ] = useState([]);
 
     useEffect( () => {
-        const apiKey = '8Lvb0B5h7UkA2AojSbHeEvziOx5bwrXm9FfkQsuN';
-
         axios({
             url: "https://api.nasa.gov/neo/rest/v1/neo/3542519?",
             params: {
                 api_key: apiKey,
-                start_date: date.startDate,
-                end_date: date.endDate
             }
         })
         .then((result) => {
@@ -46,7 +43,6 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
         }
     ]);
 
-
     function onChange (date) {
         setDate([date.selection])
     }
@@ -67,7 +63,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
     };
 
     const confirmTour = () => {
-        if (toursLeft == 0) {
+        if (toursLeft === 0) {
             return false
         }
         setToursLeft(toursLeft-1)
@@ -93,7 +89,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                 
                 </div>
                 {
-                    <>
+                <div>
                     <h2 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h2>
                     <p className="headerDescription">With FTL travel, your destination is <b>relatively</b> in a blink of an eye.</p>
                     <button className="headerBtn">Sign in / Register</button>
@@ -103,7 +99,6 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                             <FontAwesomeIcon icon={faBed} className="headerIcon" />
                             <input type="text" placeholder= {destination} className="headerSearchInput"/>
                         </div>
-                        
                         {/* Calendar */}
                         <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
@@ -119,13 +114,10 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                                 disabledDates={disabledDates}
                             />
                         </div>
-                        
                         {/* Person and Room bookings */}
                         <div className="headerSearchItem">
                             <FontAwesomeIcon icon={faPerson} className="headerIcon" />
-
                             <span onClick={()=>setOpenOptions(!openOptions)} className="headerSearchText">{`${options.adult} adult • ${options.children} children • ${options.room} room`}</span>
-
                             {/* All Options */}
                             {openOptions && <div className="options">
                                 {/* Adult counter */}
@@ -198,7 +190,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                             </div>
                         </div>
                     </div>
-                </>}
+                </div>}
             </div>
         </div>
     )
