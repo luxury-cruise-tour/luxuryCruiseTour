@@ -2,10 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed, faRocket, faCalendarDays, faPerson, faUserAstronaut, } from "@fortawesome/free-solid-svg-icons";
 import Calendar from "react-calendar";
 import { DateRange } from "react-date-range";
+
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { useState, useEffect } from "react";
 import axios from "axios";
+
 import format from "date-fns/format";
 import { Link, useLocation} from "react-router-dom";
 
@@ -66,7 +68,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
         {
         startDate: new Date(), 
         endDate: new Date(),
-        key: 'selection'
+        key: "selection"
         }
     ]);
 
@@ -176,9 +178,10 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                 //  type !== "list" &&
                     <>
                     {/* h1 and p should be moved to Home.js */}
-                        <h1 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h1>
-                        <p className="headerDescription">With FTL travel, your destination is <b>relatively</b> in a blink of an eye.</p>
-                        <button className="headerBtn">Sign in / Register</button>
+
+                    <h2 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h2>
+                    <p className="headerDescription">With FTL travel, your destination is <b>relatively</b> in a blink of an eye.</p>
+                    <button className="headerBtn">Sign in / Register</button>
                     <div className="headerSearch">
                         {/* Destination */}
                         <div className="headerSearchItem">

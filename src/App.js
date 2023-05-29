@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Locations from './components/Locations';
 import Home from './components/Home';
@@ -12,6 +12,10 @@ function App() {
 
   const [toursLeft, setToursLeft] = useState(3);
 
+  useEffect(()=>{
+    setToursLeft(toursLeft);
+  },[])
+  
   return (
     <div className="App">
 
@@ -20,8 +24,10 @@ function App() {
       {/* Routing Config */}
       <Routes>
         <Route path="/" element={<Home />}/> 
+
         <Route path="/tours/locations/dates" element={<ChooseDates toursLeft={toursLeft} setToursLeft={setToursLeft} />}/>
-        <Route path="/tours/locations" element={<Locations />}/>
+        <Route path="/tours/locations" element={<Locations 
+        toursLeft={toursLeft}/>}/>
         <Route path="/tours" element={<Tours />}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
