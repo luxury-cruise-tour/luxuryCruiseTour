@@ -37,15 +37,10 @@ const Home = () => {
         <section className="About">
             <h2>Info about YBS Galactic Tours</h2>
         </section>
-        <ChooseDates />
         <section className="POD">
             <h1>{photo.title}</h1>
             <p>{photo.explanation}</p>
             <img src={photo.url} alt={photo.title} />
-        </section>
-        <section className="Dates">
-          <h1>Available Dates!</h1>
-          {/* <Link to="/dates"><Dates /></Link> */}
         </section>
         </div>
     </div>

@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Navigation from './components/Navigation';
 import ErrorPage from './components/ErrorPage';
 import Tours from './components/Tours';
+import ChooseDates from './components/ChooseDates';
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
       {/* Routing Config */}
       <Routes>
         <Route path="/" element={<Home />}/> 
+
+        <Route path="/tours/locations/dates" element={<ChooseDates toursLeft={toursLeft} setToursLeft={setToursLeft} />}/>
         <Route path="/tours/locations" element={<Locations 
         toursLeft={toursLeft}/>}/>
         <Route path="/tours" element={<Tours />}/>

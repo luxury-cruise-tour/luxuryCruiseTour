@@ -1,3 +1,4 @@
+import { Link, useLocation } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import React, { useState } from 'react';
 
@@ -26,7 +27,9 @@ const Locations = ({toursLeft}) => {
                 <img src={image[0].items[27].links[0].href} alt={image[0].items[27].data[0].title} />
                 <img src={image[1].items[7].links[0].href} alt={image[1].items[7].data[0].title} />
                 <img src={image[2].items[72].links[0].href} alt={image[2].items[72].data[0].title} />
-                <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
+                  <Link to="/tours/locations/dates" state={{ tourValue : 1, destination : 'Mercury, Venus, and Mars' }}>
+                    <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
+                </Link>
             </div>
         )
     } else if (tourValue === 2) {
@@ -36,7 +39,10 @@ const Locations = ({toursLeft}) => {
                 <img src={image[3].items[2].links[0].href} alt={image[3].items[2].data[0].title} />
                 <img src={image[4].items[70].links[0].href} alt={image[4].items[70].data[0].title} />
                 <img src={image[5].items[9].links[0].href} alt={image[5].items[9].data[0].title} />
-                <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
+                <Link to="/tours/locations/dates" state={{ tourValue : 2, destination : 'Ganymede, Titan, and Europa' }}>
+                    <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
+                </Link>
+
             </div>
         )
     } else if (tourValue === 3) {
@@ -46,7 +52,10 @@ const Locations = ({toursLeft}) => {
                 <img src={image[6].items[6].links[0].href} alt={image[6].items[6].data[0].title} />
                 <img src={image[7].items[0].links[0].href} alt={image[7].items[0].data[0].title} />
                 <img src={image[8].items[2].links[0].href} alt={image[8].items[2].data[0].title} />
-                <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
+                <Link to="/tours/locations/dates" state={{ tourValue : 3, destination : 'Pluto, Eris, and Sedna' }}>
+                    <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
+                </Link>
+
             </div>
         )
     } else {
