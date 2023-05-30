@@ -685,11 +685,11 @@ body {
   width: 100%;
   max-width: 1040px;
   margin: 20px 0px 100px;
+  max-height: calc(100vh - 20px);
+  padding-right: 16px;
 }
 
-.headerContainer.listMode {
-  margin: 20px 0px 0px;
-}
+
 
 .headerList {
   display: flex;
@@ -700,13 +700,17 @@ body {
 .headerListItem {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.headerListItem.active {
-  border: 1px solid white;
+  justify-content: space-around;
+  border: 1px solid transparent;
   padding: 10px;
   border-radius: 20px;
+}
+
+.headerListItem:hover {
+  border: 1px solid #F4E6E8;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .headerDescription {
@@ -723,18 +727,17 @@ body {
 }
 
 .headerSearch {
-  height: 30px;
   background-color: transparent;
-  border: 1px solid #F4E6E8;  
+  border: 1px solid #F4E6E8;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 25px 0;
   border-radius: 5px;
   position: absolute;
-  bottom: -20px;
   width: 100%;
   max-width: 1040px;
+  text-align: inherit;
 }
 
 .headerIcon {
@@ -747,31 +750,46 @@ body {
   gap: 10px;
 }
 
+
 .headerSearchInput {
-  border: none;
   outline: none;
   background-color: transparent;
   color: white;
-
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .headerSearchText {
-  color: lightgray;
-  cursor: pointer;
+
+
+ color: lightgray;
+ cursor: pointer;
+ flex: 1 1 auto;
+ border: 1px solid #F4E6E8;
+ text-overflow: ellipsis;
+ overflow: hidden;
+ white-space: nowrap;
+ padding: 5px;
+ border-radius: 10px;
 }
 
 .date {
   position: absolute;
-  top: 50px;
+  top: 100px;
 }
 
 .options {
   position: absolute;
-  top: 50px;
+  right: 160px;
+  top: 75px;
   background-color: white;
   color: grey;
   border-radius: 5px;
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  margin-top: 25px;
 }
 
 .optionItem {
@@ -800,26 +818,97 @@ body {
 @media (max-width: 1065px) {
 
   .headerSearchItem {
-    gap: 30%;
+    gap: 0%;
   }
 }
 
 
 @media (max-width: 1050px) {
+  .headerSearch {
+    flex-direction: column;
+    border: none;
+  }
   .headerList {
-    gap: 20%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headerSearchText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .headerListItem {
+    padding: 10px;
+  }
+
+  .headerSearchInput {
+    width: 250px;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .headerSearchItem {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    margin: 5px;
+  }
+
+  .headerSearchText {
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .date {
+    position: static;
+    width: 332px;
+    height: 344px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: none;
+  }
+
+  .options {
+    position: static;
+    width: 220px;
+    height: 130px;
+    top: calc(100% + 25px);
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: grey;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+    margin-top: 5px;
   }
 }
 
 @media (max-width: 575px) {
   .headerList {
     flex-direction: column;
-    gap: 10%;
     justify-content: center;
     align-items: center;
   }
 
+  .headerSearchText {
+    overflow: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .headerListItem {
-    padding: 20px 0;
+    padding: 10px;
   }
 }

@@ -44,7 +44,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
     ]);
 
     function onChange (date) {
-        setDate([date.selection])
+        setDate([date.selection])   
     }
 
     const [ options, setOptions] = useState({
@@ -64,16 +64,26 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
 
     const confirmTour = () => {
         if (toursLeft === 0) {
-            return false
-        }
+            // return false
+            const message = `It appears you've met your daily limit!`
+
+            alert(message)
+        } else {
         setToursLeft(toursLeft-1)
+        const departure = format(date[0].startDate, "MMMM dd, yyyy");
+        const arrival = format(date[0].endDate, "MMMM dd, yyyy");
+
+        const confirmation = `Congratulations! Your tour to ${destination} has been booked! We will have ${options.room} room(s) available for ${options.adult} adult(s) and ${options.children} children. You will be leaving on ${departure} and returning on ${arrival}. Bon Voyage!`
+
+        alert(confirmation)
+        }
     }
 
     return (
         <div className="header paddingTop">
             <div className="headerContainer">
                 <div className="headerList">
-                    <div className="headerListItem active">
+                    <div className="headerListItem">
                         <FontAwesomeIcon icon={faBed} />
                         <span>Stays</span>
                     </div>
@@ -92,6 +102,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                     <h2 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h2>
                     <p className="headerDescription">With FTL (Faster than Light) travel, your destination is <span>relatively</span>  in the blink of an eye.</p>
                     <button className="headerBtn">Sign in / Register</button>
+                    <section>
                     <div className="headerSearch">
                         {/* Destination */}
                         <div className="headerSearchItem">
@@ -101,8 +112,8 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                         {/* Calendar */}
                         <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-                        <span onClick={()=> setOpenDate(openDate)}  className="headerSearchText">{`${format(date[0].startDate, "yyyy/MM/dd")} to ${format(date[0].endDate, "yyyy/MM/dd")}`}</span>
-                            <DateRange
+                        <span onClick={()=> setOpenDate(!openDate)}  className="headerSearchText">{`${format(date[0].startDate, "yyyy/MM/dd")} to ${format(date[0].endDate, "yyyy/MM/dd")}`}</span>
+                        {openDate && <DateRange
                                 editableDateInputs={true}
                                 onChange={onChange}
                                 value={date}
@@ -111,10 +122,10 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                                 className="date"
                                 minDate={currentDate}
                                 disabledDates={disabledDates}
-                            />
+                            />}
                         </div>
                         {/* Person and Room bookings */}
-                        <div className="headerSearchItem specialCase">
+                        <div className="headerSearchItem">
                             <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                             <span onClick={()=>setOpenOptions(!openOptions)} className="headerSearchText">{`${options.adult} adult • ${options.children} children • ${options.room} room`}</span>
                             {/* All Options */}
@@ -189,6 +200,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                             </div>
                         </div>
                     </div>
+                    </section>
                 </div>
             </div>
         </div>
