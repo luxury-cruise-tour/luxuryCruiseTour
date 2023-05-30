@@ -201,6 +201,7 @@ body {
 
 .Hero, .about {
   color: #f4e6e8;
+}
 
 .about{
   font-size: 20px;
@@ -353,7 +354,6 @@ body {
   .Hero h1 {
     margin-bottom: 50px;
     font-size: 3rem;
-    padding-top: 100px;
   }
 }
 
