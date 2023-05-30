@@ -206,7 +206,8 @@ body {
   font-size: 20px;
   line-height: 1.5;
   letter-spacing: 2px;
-  width: 50%;
+  width: 100%;
+  padding: 70px 0;
 }
 
 .aboutContainer{
@@ -366,11 +367,6 @@ body {
   border-radius: 50%;
 }
 
-.about {
-  color: #f4e6e8;
-}
-
-
 @media (max-width: 800px) {
   .Hero {
     flex-direction: column;
@@ -379,6 +375,8 @@ body {
 
   .Hero h1 {
     margin-bottom: 50px;
+    font-size: 3rem;
+    padding-top: 100px;
   }
 }
 
@@ -486,6 +484,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-left: 100px;
+    padding-top: 200px;
   }
 
   .toursLayout {
@@ -976,8 +975,14 @@ body {
     display: block;
   }
 
+  .navigation a {
+    transition: border-bottom .2s ease-in;
+  }
+
   .navigation a:hover {
-     border: none;
+    border-top: none;
+    border-bottom: 3px solid;
+    padding: 0;
   }
 
   .tour-count{
