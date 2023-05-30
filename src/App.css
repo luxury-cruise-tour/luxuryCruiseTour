@@ -83,7 +83,7 @@ body {
 }
 
 header{
-  height: 80vh;
+  height: 100vh;
 }
 
 .wrapper {
@@ -698,7 +698,7 @@ footer{
 /* Dates styles */
 .header {
   background-color: transparent;
-  color: white;
+  color: #fff;
   display: flex;
   justify-content: center;
   position: relative;
