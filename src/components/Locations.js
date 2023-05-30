@@ -111,5 +111,4 @@ const Locations = ({toursLeft}) => {
     }
 }
 
-
 export default Locations;
