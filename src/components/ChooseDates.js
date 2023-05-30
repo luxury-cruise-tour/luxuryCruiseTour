@@ -45,6 +45,10 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
 
     function onChange (date) {
         setDate([date.selection])
+        // console.log(date.selection.startDate)
+        console.log(`${format(date.selection.startDate, "MMMM dd, yyyy")}`)
+        console.log(`${format(date.selection.endDate, "MMMM dd, yyyy")}`)
+        console.log(`${options.adult} ${options.children} ${options.room}`)    
     }
 
     const [ options, setOptions] = useState({
@@ -65,15 +69,17 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
     const confirmTour = () => {
         if (toursLeft === 0) {
             return false
-        }
+        } else {
         setToursLeft(toursLeft-1)
+        alert(`Congratulations! Your tour to ${destination} has been booked! We will have ${options.room} room(s) available for ${options.adult} adult(s) and ${options.children} children.`)
+        }
     }
 
     return (
         <div className="header paddingTop">
             <div className="headerContainer">
                 <div className="headerList">
-                    <div className="headerListItem active">
+                    <div className="headerListItem">
                         <FontAwesomeIcon icon={faBed} />
                         <span>Stays</span>
                     </div>
