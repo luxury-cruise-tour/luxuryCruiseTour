@@ -307,10 +307,6 @@ body {
   .tourCount{
     display: block;
   }
-
-  .tourCount p {
-    font-size: 18px;
-  }
 }
 
 /* Home Styles */
@@ -492,7 +488,7 @@ body {
   }
 
   .tourCount p {
-    font-size: 18px;
+    font-size: 1.1rem;
   }
 }
 
@@ -554,7 +550,7 @@ body {
   padding: 10px 25px;
 }
 
-.locations button, .headerBtn{
+.locations button{
   width: 20%;
   font-size: 1.2rem;
   margin: 40px auto 100px;
@@ -697,7 +693,7 @@ body {
 
 .headerList {
   display: flex;
-  gap: 40%;
+  gap: 33%;
   margin-bottom: 50px;
 }
 
@@ -717,6 +713,11 @@ body {
   margin: 20px 0;
 }
 
+.headerTitle, 
+.headerDescription {
+    padding: 0 30px;
+}
+
 .headerDescription span {
   font-weight: 700;
 }
@@ -724,11 +725,11 @@ body {
 .headerSearch {
   height: 30px;
   background-color: transparent;
-  border: 3px solid #dd361c;
+  border: 1px solid #F4E6E8;  
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 25px 0;
   border-radius: 5px;
   position: absolute;
   bottom: -20px;
@@ -796,3 +797,29 @@ body {
 }
 
 /* Osman's Media queries styles */
+@media (max-width: 1065px) {
+
+  .headerSearchItem {
+    gap: 30%;
+  }
+}
+
+
+@media (max-width: 1050px) {
+  .headerList {
+    gap: 20%;
+  }
+}
+
+@media (max-width: 575px) {
+  .headerList {
+    flex-direction: column;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headerListItem {
+    padding: 20px 0;
+  }
+}
