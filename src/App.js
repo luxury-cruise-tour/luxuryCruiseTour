@@ -15,7 +15,8 @@ function App() {
 
   useEffect(()=>{
     setToursLeft(toursLeft);
-  },[])
+    
+  },[]) // eslint-disable-line react-hooks/exhaustive-deps
   
   return (
     <div className="App">
