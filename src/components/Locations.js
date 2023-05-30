@@ -41,7 +41,7 @@ const Locations = ({toursLeft}) => {
                     toursLeft === 0 ?
                     <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
                     :
-                    <Link to="/tours/locations/dates" state={{ tourValue : 1, destination : 'Mercury, Venus, and Mars' }}>
+                    <Link className="buttonContainer" to="/tours/locations/dates" state={{ tourValue : 1, destination : 'Mercury, Venus, and Mars' }}>
                         <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
                     </Link>
                 }
@@ -69,7 +69,7 @@ const Locations = ({toursLeft}) => {
                     toursLeft === 0 ? 
                     <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
                     :
-                    <Link to="/tours/locations/dates" state={{ tourValue : 2, destination : 'Ganymede, Titan, and Europa' }}>
+                    <Link className="buttonContainer" to="/tours/locations/dates" state={{ tourValue : 2, destination : 'Ganymede, Titan, and Europa' }}>
                     <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
                     </Link>
                 }
@@ -98,7 +98,7 @@ const Locations = ({toursLeft}) => {
                     toursLeft === 0 ? 
                     <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
                     :
-                    <Link to="/tours/locations/dates" state={{ tourValue : 3, destination : 'Pluto, Eris, and Sedna' }}>
+                    <Link className="buttonContainer" to="/tours/locations/dates" state={{ tourValue : 3, destination : 'Pluto, Eris, and Sedna' }}>
                         <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
                     </Link>
                 }
