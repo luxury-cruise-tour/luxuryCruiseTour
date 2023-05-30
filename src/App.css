@@ -775,12 +775,7 @@ footer{
 .headerSearchInput {
   outline: none;
   background-color: transparent;
-  color: #fff;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 5px;
-  border-radius: 10px;
+  color: #D3D3D3;
 }
 
 .headerSearchText {
@@ -788,11 +783,17 @@ footer{
  cursor: pointer;
  flex: 1 1 auto;
  border: 1px solid #F4E6E8;
- text-overflow: ellipsis;
- overflow: hidden;
- white-space: nowrap;
- padding: 5px;
- border-radius: 10px;
+ width: 300px;
+}
+
+.headerSearchInput,
+.headerSearchText {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .date {
@@ -862,6 +863,7 @@ footer{
   }
 
   .headerSearchText {
+    width: 300px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
