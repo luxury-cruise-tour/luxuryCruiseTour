@@ -793,7 +793,7 @@ body {
 
 .date {
   position: absolute;
-  top: 50px;
+  top: 100px;
 }
 
 .options {
@@ -807,8 +807,9 @@ body {
   margin-left: 20px; */
 
   position: absolute;
-  top: calc(100% + 25px);
-  left: 0;
+  /* top: calc(100% + 25px); */
+  right: 170px;
+  top: 75px;
   background-color: white;
   color: grey;
   border-radius: 5px;
