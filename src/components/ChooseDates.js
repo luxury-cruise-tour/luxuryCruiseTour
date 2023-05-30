@@ -179,6 +179,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                                     <div className="optionCounter">
                                     
                                     <button
+                                    disabled={options.room >= 20}
                                     className="optionCounterButton" onClick={()=> {handleOption("room", "increase")}}>
                                         +
                                     </button>
