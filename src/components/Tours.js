@@ -106,7 +106,7 @@ const Tours = () => {
   useEffect(() => {
     getImages();
     setIsLoading(false);
-  },[]);
+  },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const toursInfo = [imageOne, imageTwo, imageThree, imageFour, imageFive, imageSix, imageSeven, imageEight, imageNine];
 
