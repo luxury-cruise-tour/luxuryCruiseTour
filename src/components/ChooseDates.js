@@ -44,11 +44,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
     ]);
 
     function onChange (date) {
-        setDate([date.selection])
-        // console.log(date.selection.startDate)
-        console.log(`${format(date.selection.startDate, "MMMM dd, yyyy")}`)
-        console.log(`${format(date.selection.endDate, "MMMM dd, yyyy")}`)
-        console.log(`${options.adult} ${options.children} ${options.room}`)    
+        setDate([date.selection])   
     }
 
     const [ options, setOptions] = useState({
@@ -68,10 +64,18 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
 
     const confirmTour = () => {
         if (toursLeft === 0) {
-            return false
+            // return false
+            const message = `It appears you've met your daily limit!`
+
+            alert(message)
         } else {
         setToursLeft(toursLeft-1)
-        alert(`Congratulations! Your tour to ${destination} has been booked! We will have ${options.room} room(s) available for ${options.adult} adult(s) and ${options.children} children.`)
+        const departure = format(date[0].startDate, "MMMM dd, yyyy");
+        const arrival = format(date[0].endDate, "MMMM dd, yyyy");
+
+        const confirmation = `Congratulations! Your tour to ${destination} has been booked! We will have ${options.room} room(s) available for ${options.adult} adult(s) and ${options.children} children. You will be leaving on ${departure} and returning on ${arrival}. Bon Voyage!`
+
+        alert(confirmation)
         }
     }
 
