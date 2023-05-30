@@ -6,8 +6,6 @@ const Locations = ({toursLeft}) => {
     const location = useLocation();
     const { tourValue, isLoading } = location.state;
 
-    console.log(isLoading);
-
     const innerplanet = useLocation();
     const { images } = innerplanet.state;
     const image = (images.toursInfo)
@@ -78,7 +76,6 @@ const Locations = ({toursLeft}) => {
                     <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
                     </Link>
                 }
-
             </section>
         )
     } else if (tourValue === 3) {

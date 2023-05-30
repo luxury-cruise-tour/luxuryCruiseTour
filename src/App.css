@@ -120,7 +120,11 @@ footer{
   transform: translateX(-50%);
 }
 
-@media (max-width: 500px){
+.specialCase{
+  padding-bottom: 0;
+}
+
+@media (max-width: 650px){
 
   footer {
     bottom:-160px;
@@ -760,7 +764,7 @@ footer{
 }
 
 .headerIcon {
-  color: lightgray;
+  color: #D3D3D3;
 }
 
 .headerSearchItem {
@@ -781,7 +785,7 @@ footer{
 }
 
 .headerSearchText {
- color: lightgray;
+ color: #D3D3D3 ;
  cursor: pointer;
  flex: 1 1 auto;
  border: 1px solid #F4E6E8;
