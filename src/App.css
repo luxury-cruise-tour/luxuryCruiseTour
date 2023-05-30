@@ -201,6 +201,23 @@ body {
 
 .Hero, .about {
   color: #f4e6e8;
+
+.about{
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  width: 100%;
+  padding: 70px 0;
+}
+
+.aboutContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Dates {
+  color: #fff;
 }
 
 .paddingTop {
@@ -318,7 +335,7 @@ body {
   font-size: 1.35rem;
   line-height: 1.5;
   letter-spacing: 2px;
-  width: 50%;
+  width: 100%;
 }
 
 .aboutContainer{
@@ -326,7 +343,6 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
 
 @media (max-width: 800px) {
   .Hero {
@@ -336,6 +352,8 @@ body {
 
   .Hero h1 {
     margin-bottom: 50px;
+    font-size: 3rem;
+    padding-top: 100px;
   }
 }
 
@@ -436,6 +454,7 @@ body {
     display: flex;
     flex-direction: column;
     padding-left: 100px;
+    padding-top: 200px;
   }
 
   .toursLayout {
@@ -775,3 +794,5 @@ body {
   background-color: white;
   color: darkblue;
 }
+
+/* Osman's Media queries styles */
