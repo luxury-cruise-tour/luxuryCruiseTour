@@ -88,7 +88,6 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                     </div>
                 
                 </div>
-                {
                 <div>
                     <h2 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h2>
                     <p className="headerDescription">With FTL (Faster than Light) travel, your destination is <span>relatively</span>  in the blink of an eye.</p>
@@ -97,7 +96,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                         {/* Destination */}
                         <div className="headerSearchItem">
                             <FontAwesomeIcon icon={faBed} className="headerIcon" />
-                            <input type="text" placeholder= {destination} className="headerSearchInput"/>
+                            <input readOnly type="text" placeholder= {destination} className="headerSearchInput"/>
                         </div>
                         {/* Calendar */}
                         <div className="headerSearchItem">
@@ -115,7 +114,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                             />
                         </div>
                         {/* Person and Room bookings */}
-                        <div className="headerSearchItem">
+                        <div className="headerSearchItem specialCase">
                             <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                             <span onClick={()=>setOpenOptions(!openOptions)} className="headerSearchText">{`${options.adult} adult • ${options.children} children • ${options.room} room`}</span>
                             {/* All Options */}
@@ -190,10 +189,9 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                             </div>
                         </div>
                     </div>
-                </div>}
+                </div>
             </div>
         </div>
     )
 }
-
 export default ChooseDates;
