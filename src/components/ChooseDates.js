@@ -92,6 +92,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                     <h2 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h2>
                     <p className="headerDescription">With FTL (Faster than Light) travel, your destination is <span>relatively</span>  in the blink of an eye.</p>
                     <button className="headerBtn">Sign in / Register</button>
+                    <section>
                     <div className="headerSearch">
                         {/* Destination */}
                         <div className="headerSearchItem">
@@ -114,7 +115,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                             />
                         </div>
                         {/* Person and Room bookings */}
-                        <div className="headerSearchItem specialCase">
+                        <div className="headerSearchItem">
                             <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                             <span onClick={()=>setOpenOptions(!openOptions)} className="headerSearchText">{`${options.adult} adult • ${options.children} children • ${options.room} room`}</span>
                             {/* All Options */}
@@ -189,6 +190,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                             </div>
                         </div>
                     </div>
+                    </section>
                 </div>
             </div>
         </div>
