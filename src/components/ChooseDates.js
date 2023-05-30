@@ -70,7 +70,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
     }
 
     return (
-        <div className="header padding-top">
+        <div className="header paddingTop">
             <div className="headerContainer">
                 <div className="headerList">
                     <div className="headerListItem active">
@@ -91,7 +91,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                 {
                 <div>
                     <h2 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h2>
-                    <p className="headerDescription">With FTL travel, your destination is <b>relatively</b> in a blink of an eye.</p>
+                    <p className="headerDescription">With FTL (Faster than Light) travel, your destination is <span>relatively</span> within in a blink of an eye.</p>
                     <button className="headerBtn">Sign in / Register</button>
                     <div className="headerSearch">
                         {/* Destination */}

@@ -110,7 +110,7 @@ const Tours = () => {
 
 
       return (
-        <section className= "tours wrapper padding-top">
+        <section className= "tours wrapper paddingTop">
           <h2>Pick your destination</h2>
           <div className="toursLayout">
             <h3>Inner Planets Tour</h3>

@@ -9,17 +9,11 @@ html { box-sizing: border-box;}
 *, *:before, *:after {box-sizing: inherit}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,
-blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,
-em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,
-u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,
-caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
-embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,
-section,summary,time,mark,audio,video {
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -75,6 +69,7 @@ table {
 
 body {
   font-family: "Maitree", serif;
+  font-size: 20px;
   background: url("./../src/assets/background-home-desktop.jpg");
   background-size: cover;
   overflow-x: hidden;
@@ -82,7 +77,6 @@ body {
   background-attachment: fixed;
   width: 100%;
   height: 100vh;
-  position: relative;
   line-height: 1;
   margin: 0;
   color: #f4e6e8;
@@ -92,8 +86,6 @@ body {
   max-width: 1440px;
   width: 90%;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
 .locations button, .headerBtn, .toursContainer button{
@@ -107,6 +99,12 @@ body {
   transition: all .2s ease-in;
 }
 
+.toursContainer button:hover,
+.locations button:hover, .headerBtn:hover {
+  background-color: #f4e6e8;
+  color: #105bd8;
+}
+
 /* Navigation styles */
 
 .navigation {
@@ -114,7 +112,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 70px 0;
-  font-size: 30px;
   width: 100%;
   z-index: 100;
   position: fixed;
@@ -164,14 +161,14 @@ body {
 
 .navigation p {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.35rem;
   white-space: nowrap;
 }
 
 .navigation span {
   font-weight: 700;
   padding: 10px;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 .navigation a {
@@ -202,6 +199,9 @@ body {
   z-index: 10;
 }
 
+.Hero, .about {
+  color: #f4e6e8;
+
 .about{
   font-size: 20px;
   line-height: 1.5;
@@ -216,58 +216,21 @@ body {
   justify-content: space-between;
 }
 
-.pod {
-  font-size: 20px;
-  position: absolute;
-}
-
-.pod-img{
-  width: 50%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 100px;
-}
-
-.circle{
-  width: 200px;
-  height: 200px;
-  background-color: #f4e6e8;
-  border-radius: 50%;
-  position: relative;
-  cursor: pointer;
-}
-
-.circle p {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #000;
-  letter-spacing: 2px;
-  cursor: pointer;
-  font-size: 25px;
-  transition: all .2s ease-in;
-}
-
-.circle:hover p{
-  color: #105bd8;
-}
-
 .Dates {
   color: #fff;
 }
 
-.Hero, .POD,
-.Dates, .About {
-  color: #fff;
-}
-
-.padding-top {
+.paddingTop {
   padding-top: 200px;
 }
 
-@media (max-width: 1300px) {
+@media (min-width: 1700px) {
+  .logo::after {
+    display: none;
+  }
+}
 
+@media (max-width: 1300px) {
   .logo::after {
     width: 70%;
   }
@@ -285,40 +248,37 @@ body {
     padding-top: 5px;
     border-bottom: none;
   }
-
 }
 
-@media (min-width: 1700px) {
-
-  .logo::after {
-    width: 90%;
+@media (max-width:800px){
+  .aboutContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
   }
 
-}
-
-@media (max-width: 800px) {
-
-  .navigation {
+  .navigation{
     padding: 20px 0;
-    font-size: 20px;
+    /* font-size: 20px; */
     z-index: 100;
     position: fixed;
     left: 50%;
     width: 90%;
   }
-
+  
   .logo::after,
   .navigation ul::after,
-  .navigation ul {
+  .navigation ul
+  {
     display: none;
   }
 
-  .hamburgerIcon {
+  .hamburgerIcon{
     display: block;
     cursor: pointer;
   }
 
-  .hide {
+  .hide{
     display: none;
   }
 
@@ -335,16 +295,20 @@ body {
     padding-top: 30px;
   }
 
-.padding-top{
-  padding-top: 200px;
-}
-
-  .show {
+  .show{
     display: block;
   }
 
-  .padding-top {
-    padding-top: 100px
+  .navigation a:hover {
+     border: none;
+  }
+
+  .tourCount{
+    display: block;
+  }
+
+  .tourCount p {
+    font-size: 18px;
   }
 }
 
@@ -365,6 +329,19 @@ body {
   border: 1px #f4e6e8 solid;
   padding: 0 10px;
   border-radius: 50%;
+}
+
+.about{
+  font-size: 1.35rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  width: 100%;
+}
+
+.aboutContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 800px) {
@@ -395,15 +372,15 @@ body {
 .tours {
   color: #f4e6e8;
   font-weight: 700;
-  font-size: 35px;
 }
 
 .tours h2 {
   margin-bottom: 100px;
+  font-size: 1.7rem;
 }
 
 .tours h3 {
-  font-size: 25px;
+  font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 30px;
 }
@@ -425,7 +402,6 @@ body {
   gap: 50px;
   width: 50%;
   height: 700px;
-  font-size: 20px;
   font-weight: 300;
   position: relative;
 }
@@ -465,12 +441,6 @@ body {
   top: 350px;
 }
 
-.toursContainer button:hover,
-.locations button:hover, .headerBtn:hover {
-  background-color: #f4e6e8;
-  color: #105bd8;
-}
-
 .tourCount{
   position: absolute;
   top: 100px;
@@ -503,7 +473,7 @@ body {
     min-width: 400px;
     padding-bottom: 100px;
     border-bottom: none;
-    font-size: 18px;
+    font-size: 1.1rem;
   }
 
   .toursContainer {
@@ -514,7 +484,6 @@ body {
     left: 0;
     top: 250px;
   }
-
 }
 
 @media (max-width:800px){
@@ -533,26 +502,26 @@ body {
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 430px) {
   .toursContainer {
     height: 400px;
     gap: 10px;
   }
 
   .toursLocations li {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
   }
 
   .tours h2 {
-    font-size: 1.6rem;
+    display: none;
   }
 
   .toursDescription {
-    min-width: 300px;
+    min-width: 290px;
     padding-bottom: 20px;
     border-bottom: none;
-    font-size: 16px;
+    font-size: 0.95rem;
   }
 
   .tours li {
@@ -570,7 +539,7 @@ body {
   flex-direction: column;
   color: #f4e6e8;
   font-weight: 700;
-  font-size: 35px;
+  font-size: 2.1rem;
   text-align: center;
 }
 
@@ -610,6 +579,7 @@ body {
 }
 
 .container p{
+  font-size: 1.5rem;
   visibility: hidden;
 }
 .container:hover p{
@@ -655,20 +625,7 @@ body {
   }
 }
 
-/* Error styles */
-
-.error {
-  text-align: center;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  padding: 50px;
-  margin: 100px auto;
-  max-width: 600px;
-  border: 1px solid #dd361c;
-  color: #dd361c;
-  border-radius: 20px;
-}
+/* ErrorPage styles */
 
 .errorPageContainer {
   display: block;
@@ -680,13 +637,13 @@ body {
 }
 
 .errorPageContainer h2 {
-  font-size: 50px;
+  font-size: 3rem;
   padding: 20px 0;
 }
 
 .errorPageContainer p {
   padding: 10px 0;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
@@ -696,16 +653,13 @@ body {
 }
 
 @media (max-width: 400px){
-
   .errorPageContainer h2 {
-    font-size: 40px;
+    font-size: 2.2rem;
   }
 
   .errorPageContainer p {
-    font-size: 20px;
+    font-size: 1.2rem;
   }
-
-
 }
 
 @keyframes floating {
@@ -734,11 +688,11 @@ body {
 .headerContainer {
   width: 100%;
   max-width: 1040px;
-  margin: 20px 0px 100px 0px;
+  margin: 20px 0px 100px;
 }
 
 .headerContainer.listMode {
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0px 0px;
 }
 
 .headerList {
@@ -763,14 +717,9 @@ body {
   margin: 20px 0;
 }
 
-/* .headerBtn {
-  background-color: transparent;
-  color: white;
-  font-weight: 500;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-} */
+.headerDescription span {
+  font-weight: 700;
+}
 
 .headerSearch {
   height: 30px;
@@ -844,192 +793,6 @@ body {
   height: 30px;
   background-color: white;
   color: darkblue;
-
 }
 
-/* .optionCounterButton:disabled {
-  cursor: not-allowed;
-} */
-
-/* Media queries styles */
-
-@media (max-width: 1300px){
-
-  .logo::after{
-    width: 70%;
-  }
-
-  .navigation ul{
-    flex-wrap: wrap;
-  }
-
-  .navigation a{
-    transition: border-top .2s ease-in;
-  }
-
-  .navigation a:hover{
-    border-top: 3px solid;
-    padding-top: 5px;
-    border-bottom: none;
-  }
-
-}
-
-@media (min-width: 1700px){
-
-  .logo::after{
-    display: none;
-  } 
-
-}
-
-@media (max-width:900px){
-
-  .tours{
-    display: flex;
-    flex-direction: column;
-    padding-left: 100px;
-  }
-
-  .tours h2{
-    display: none;
-  }
-
-  .tours-layout{
-    left: 0;
-  }
-
-  .tours-image {
-    left: 0;
-    opacity: .2;
-    height: 300px;
-  }
-
-  .tours-description{
-    position: absolute;
-    line-height: 1.2;
-    min-width: 400px;
-    padding-bottom: 100px;
-    border-bottom: none;
-    font-size: 18px;
-  }
-
-  .tours-container{
-    height: 500px;
-  }
-  
-  .tours-container button{
-    left: 0;
-    top: 250px;
-  }
-
-}
-
-@media (max-width:800px){
-
-  .about-container{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-  }
-
-  .navigation{
-    padding: 20px 0;
-    font-size: 20px;
-    z-index: 100;
-    position: fixed;
-    left: 50%;
-    width: 90%;
-  }
-  
-  .logo::after,
-  .navigation ul::after,
-  .navigation ul
-  {
-    display: none;
-  }
-
-  .hamburger-icon{
-    display: block;
-    cursor: pointer;
-  }
-
-  .hide{
-    display: none;
-  }
-
-  .mobile-menu {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: -10;
-    padding-top: 300px;
-  }
-
-  .mobile-menu div {
-    padding-top: 30px;
-  }
-
-  .show{
-    display: block;
-  }
-
-  .navigation a {
-    transition: border-bottom .2s ease-in;
-  }
-
-  .navigation a:hover {
-    border-top: none;
-    border-bottom: 3px solid;
-    padding: 0;
-  }
-
-  .tour-count{
-    display: block;
-  }
-
-  .tour-count p {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 600px){
-
-  .tours{
-    padding-left: 0;
-  }
-}
-
-@media (max-width: 430px){
-
-  .tours-container {
-    height: 400px;
-    gap:10px;
-  }
-
-  .tours-locations li {
-    font-size: 16px;
-    font-weight: 700;
-  }
-
-  .tours h2{
-    display: none;
-  }
-  
-  .tours-description {
-    min-width: 300px;
-    padding-bottom: 20px;
-    border-bottom: none;
-    font-size: 16px;
-  }
-
-  .tours li {
-    cursor: pointer;
-    text-transform: uppercase;
-    padding: 10px 0;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom .2s ease-in;
-  }
-  
-}
+/* Osman's Media queries styles */

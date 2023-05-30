@@ -21,7 +21,7 @@ const Locations = ({toursLeft}) => {
 
     if (tourValue === 1) {
         return (
-            <div className="locations padding-top wrapper">
+            <section className="locations paddingTop wrapper">
                 <h2>Mercury, Venus, and Mars Tour!</h2>
                 <ul>
   					<li className="container">
@@ -45,11 +45,11 @@ const Locations = ({toursLeft}) => {
                         <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
                     </Link>
                 }
-            </div>
+            </section>
         )
     } else if (tourValue === 2) {
         return (
-            <div className="locations padding-top wrapper">
+            <section className="locations paddingTop wrapper">
                 <h2>Ganymede, Titan, and Europa Tour!</h2>
                 <ul>
                     <li className="container">
@@ -74,11 +74,11 @@ const Locations = ({toursLeft}) => {
                     </Link>
                 }
 
-            </div>
+            </section>
         )
     } else if (tourValue === 3) {
         return (
-            <div className="locations padding-top wrapper">
+            <section className="locations paddingTop wrapper">
                 <h2>Pluto, Eris and Sedna Tour!</h2>
                 <ul>
                     <li className="container">
@@ -102,7 +102,7 @@ const Locations = ({toursLeft}) => {
                         <button onClick={handleDisable} disabled={isDisabled}> Book This Tour! </button>
                     </Link>
                 }
-            </div>
+            </section>
         )
     } else {
         return (
