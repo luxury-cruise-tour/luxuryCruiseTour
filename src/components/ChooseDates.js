@@ -102,8 +102,8 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                         {/* Calendar */}
                         <div className="headerSearchItem">
                         <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-                        <span onClick={()=> setOpenDate(openDate)}  className="headerSearchText">{`${format(date[0].startDate, "yyyy/MM/dd")} to ${format(date[0].endDate, "yyyy/MM/dd")}`}</span>
-                            <DateRange
+                        <span onClick={()=> setOpenDate(!openDate)}  className="headerSearchText">{`${format(date[0].startDate, "yyyy/MM/dd")} to ${format(date[0].endDate, "yyyy/MM/dd")}`}</span>
+                        {openDate && <DateRange
                                 editableDateInputs={true}
                                 onChange={onChange}
                                 value={date}
@@ -112,7 +112,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                                 className="date"
                                 minDate={currentDate}
                                 disabledDates={disabledDates}
-                            />
+                            />}
                         </div>
                         {/* Person and Room bookings */}
                         <div className="headerSearchItem">
