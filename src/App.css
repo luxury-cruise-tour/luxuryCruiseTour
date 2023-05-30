@@ -568,7 +568,7 @@ body {
   font-family: inherit;
   border: none;
   border-radius: 10px;
-  background-color: darkgrey;
+  background-color: #808080;
   color: #dd361c;
   padding: 10px 10px;
   transition: all .2s ease-in;
@@ -689,7 +689,9 @@ body {
   padding-right: 16px;
 }
 
-
+.iconPadding{
+  padding-left: 10px;
+}
 
 .headerList {
   display: flex;
@@ -750,11 +752,10 @@ body {
   gap: 10px;
 }
 
-
 .headerSearchInput {
   outline: none;
   background-color: transparent;
-  color: white;
+  color: #fff;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -763,8 +764,6 @@ body {
 }
 
 .headerSearchText {
-
-
  color: lightgray;
  cursor: pointer;
  flex: 1 1 auto;
@@ -785,8 +784,8 @@ body {
   position: absolute;
   right: 160px;
   top: 75px;
-  background-color: white;
-  color: grey;
+  background-color: #fff;
+  color: #808080;
   border-radius: 5px;
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
   margin-top: 25px;
@@ -803,15 +802,15 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
-  color: black;
+  font-size: 1rem;
+  color: #000;
 }
 
 .optionCounterButton {
   width: 30px;
   height: 30px;
-  background-color: white;
-  color: darkblue;
+  background-color: #fff;
+  color: #105bd8;
 }
 
 /* Osman's Media queries styles */
@@ -821,7 +820,6 @@ body {
     gap: 0%;
   }
 }
-
 
 @media (max-width: 1050px) {
   .headerSearch {
@@ -848,7 +846,7 @@ body {
     width: 250px;
     outline: none;
     background-color: transparent;
-    color: white;
+    color: #fff;
     text-overflow: ellipsis;
     white-space: wrap;
     overflow: hidden;
@@ -887,8 +885,8 @@ body {
     top: calc(100% + 25px);
     left: 0;
     right: 0;
-    background-color: white;
-    color: grey;
+    background-color: #fff;
+    color: #808080;
     border-radius: 5px;
     box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
     margin-top: 5px;
@@ -903,7 +901,6 @@ body {
   }
 
   .headerSearchText {
-    overflow: hidden;
     overflow: hidden;
     text-overflow: ellipsis;
   }

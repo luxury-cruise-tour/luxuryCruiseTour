@@ -85,16 +85,16 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                 <div className="headerList">
                     <div className="headerListItem">
                         <FontAwesomeIcon icon={faBed} />
-                        <span>Stays</span>
+                        <span className="iconPadding">Stays</span>
                     </div>
                     <div className="headerListItem">
                     <FontAwesomeIcon icon={faRocket} />
-                        <span>Cruises</span>
+                        <span className="iconPadding">Cruises</span>
                     </div>
 
                     <div className="headerListItem">
                         <FontAwesomeIcon icon={faUserAstronaut} />
-                        <span>Attractions</span>
+                        <span className="iconPadding">Attractions</span>
                     </div>
                 
                 </div>
