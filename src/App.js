@@ -7,7 +7,8 @@ import Navigation from './components/Navigation';
 import ErrorPage from './components/ErrorPage';
 import Tours from './components/Tours';
 import ChooseDates from './components/ChooseDates';
-//test
+import Footer from './components/Footer';
+
 
 function App() {
 
@@ -21,19 +22,20 @@ function App() {
   return (
     <div className="App">
 
-      <Navigation numOfTours={toursLeft} />
-
-      {/* Routing Config */}
-      <Routes>
-        <Route path="/" element={<Home />}/> 
-
-        <Route path="/tours/locations/dates" element={<ChooseDates toursLeft={toursLeft} setToursLeft={setToursLeft} />}/>
-        <Route path="/tours/locations" element={<Locations 
-        toursLeft={toursLeft}/>}/>
-        <Route path="/tours" element={<Tours />}/>
-        <Route path="*" element={<ErrorPage/>}/>
-      </Routes>
-
+    <Navigation numOfTours={toursLeft} />
+      <main>
+        {/* Routing Config */}
+        <Routes>
+            <Route path="/" element={<Home />}/> 
+            <Route path="/tours/locations/dates" element={<ChooseDates toursLeft={toursLeft} setToursLeft={setToursLeft} />}/>
+            <Route path="/tours/locations" element={<Locations 
+            toursLeft={toursLeft}/>}/>
+            <Route path="/tours" element={<Tours />}/>
+            <Route path="*" element={<ErrorPage/>}/>
+        </Routes>
+      </main>
+    <Footer />
+      
     </div>
   );
 }

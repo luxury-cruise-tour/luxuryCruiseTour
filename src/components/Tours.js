@@ -15,6 +15,7 @@ import sednaImage from "./../assets/image-sedna.png";
 const Tours = () => {
 
   const { innerPlanets, notableMoons, transNeptunian } = toursData;
+  const [ isLoading, setIsLoading] = useState(true);
 
   const displayedImage = {
     Mars: marsImage,
@@ -104,7 +105,8 @@ const Tours = () => {
 
   useEffect(() => {
     getImages();
-  });
+    setIsLoading(false);
+  },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const toursInfo = [imageOne, imageTwo, imageThree, imageFour, imageFive, imageSix, imageSeven, imageEight, imageNine];
 
@@ -129,7 +131,7 @@ const Tours = () => {
                       </div>
                     </div>
                   ))}
-                  <Link to="/tours/locations" state={{ tourValue : 1, images : {toursInfo} }}>
+                  <Link to="/tours/locations" state={{ tourValue : 1, images : {toursInfo}, isLoading: isLoading }}>
                     <button>View Details</button>
                   </Link>
               </div>
@@ -151,7 +153,7 @@ const Tours = () => {
                       </div>
                     </div>
                   ))}
-                <Link to="/tours/locations" state={{ tourValue : 2, images : {toursInfo}}}>
+                <Link to="/tours/locations" state={{ tourValue : 2, images : {toursInfo}, isLoading: isLoading }}>
                   <button value="2">View Details</button>
                 </Link>
               </div>
@@ -173,7 +175,7 @@ const Tours = () => {
                       </div>
                     </div>
                   ))}
-                <Link to="/tours/locations" state={{ tourValue : 3, images : {toursInfo} }}>
+                <Link to="/tours/locations" state={{ tourValue : 3, images : {toursInfo}, isLoading: isLoading  }}>
                   <button value="3">View Details</button>
                 </Link>
               </div>

@@ -1,4 +1,3 @@
-/* Color Palette: #105bd8 #dd361c #f4e6e8*/
 @import url("https://fonts.googleapis.com/css2?family=Maitree:wght@300;700&display=swap");
 
 /* Resets styles */
@@ -76,10 +75,14 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  height: 100vh;
   line-height: 1;
+  position: relative;
   margin: 0;
   color: #f4e6e8;
+}
+
+header{
+  height: 100vh;
 }
 
 .wrapper {
@@ -103,6 +106,31 @@ body {
 .locations button:hover, .headerBtn:hover {
   background-color: #f4e6e8;
   color: #105bd8;
+}
+
+/* Footer styles */
+
+footer{
+  text-align: center;
+  position: absolute;
+  bottom: -50px;
+  left: 50%; 
+  padding-bottom: 50px;
+  transform: translateX(-50%);
+}
+
+.specialCase{
+  padding-bottom: 0;
+}
+
+@media (max-width: 650px){
+
+  footer {
+    bottom:-160px;
+  }
+  footer p {
+    padding-top: 50px;
+  }
 }
 
 /* Navigation styles */
@@ -260,7 +288,7 @@ body {
 
   .navigation{
     padding: 20px 0;
-    /* font-size: 20px; */
+    font-size: 1rem;
     z-index: 100;
     position: fixed;
     left: 50%;
@@ -531,8 +559,6 @@ body {
 
 /* Locations Styles */
 .locations {
-  display: flex;
-  flex-direction: column;
   color: #f4e6e8;
   font-weight: 700;
   font-size: 2.1rem;
@@ -675,10 +701,11 @@ body {
 /* Dates styles */
 .header {
   background-color: transparent;
-  color: white;
+  color: #fff;
   display: flex;
   justify-content: center;
   position: relative;
+  padding-bottom: 700px;
 }
 
 .headerContainer {
@@ -706,13 +733,6 @@ body {
   border: 1px solid transparent;
   padding: 10px;
   border-radius: 20px;
-}
-
-.headerListItem:hover {
-  border: 1px solid #F4E6E8;
-  padding: 10px;
-  border-radius: 20px;
-  cursor: pointer;
 }
 
 .headerDescription {
@@ -743,7 +763,7 @@ body {
 }
 
 .headerIcon {
-  color: lightgray;
+  color: #D3D3D3;
 }
 
 .headerSearchItem {
@@ -764,7 +784,7 @@ body {
 }
 
 .headerSearchText {
- color: lightgray;
+ color: #D3D3D3 ;
  cursor: pointer;
  flex: 1 1 auto;
  border: 1px solid #F4E6E8;
@@ -778,6 +798,10 @@ body {
 .date {
   position: absolute;
   top: 100px;
+}
+
+.rdrMonth {
+  width: 90%;
 }
 
 .options {
@@ -813,7 +837,12 @@ body {
   color: #105bd8;
 }
 
-/* Osman's Media queries styles */
+.optionCounterNumber{
+  width: 10px;
+  text-align: center;
+}
+
+/* Dates Component Media queries */
 @media (max-width: 1065px) {
 
   .headerSearchItem {
@@ -900,6 +929,11 @@ body {
     align-items: center;
   }
 
+  .header{
+    padding-bottom: 800px;
+  }
+
+
   .headerSearchText {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -907,5 +941,12 @@ body {
 
   .headerListItem {
     padding: 10px;
+  }
+  
+}
+
+@media (max-width: 350px){
+  .header{
+    padding-bottom: 850px;
   }
 }

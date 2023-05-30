@@ -1,6 +1,6 @@
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBed, faRocket, faCalendarDays, faPerson, faUserAstronaut, } from "@fortawesome/free-solid-svg-icons";
+import { faBed, faRocket, faCalendarDays, faUserAstronaut, } from "@fortawesome/free-solid-svg-icons";
 import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -100,12 +100,12 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                 </div>
                 <div>
                     <h2 className="headerTitle">Travel in luxury. Travel in space. Travel with YBS Galactic Tours.</h2>
-                    <p className="headerDescription">With FTL (Faster than Light) travel, your destination is <span>relatively</span>  in the blink of an eye.</p>
+                    <p className="headerDescription">With FTL travel, your destination is <span>relatively</span> in a blink of an eye.</p>
                     <section>
                     <div className="headerSearch">
                         {/* Destination */}
                         <div className="headerSearchItem">
-                            <FontAwesomeIcon icon={faBed} className="headerIcon" />
+                            <FontAwesomeIcon icon={faRocket} className="headerIcon" />
                             <input readOnly type="text" placeholder= {destination} className="headerSearchInput"/>
                         </div>
                         {/* Calendar */}
@@ -125,7 +125,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                         </div>
                         {/* Person and Room bookings */}
                         <div className="headerSearchItem">
-                            <FontAwesomeIcon icon={faPerson} className="headerIcon" />
+                            <FontAwesomeIcon icon={faBed} className="headerIcon" />
                             <span onClick={()=>setOpenOptions(!openOptions)} className="headerSearchText">{`${options.adult} adult • ${options.children} children • ${options.room} room`}</span>
                             {/* All Options */}
                             {openOptions && <div className="options">
@@ -135,6 +135,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                                     <div className="optionCounter">
 
                                         <button
+                                        disabled={(options.adult + options.children)/6 >= options.room}
                                         className="optionCounterButton" onClick={()=> {handleOption("adult", "increase")}}>
                                             +
                                         </button>
@@ -156,6 +157,7 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                                     <div className="optionCounter">
 
                                         <button
+                                        disabled={(options.adult + options.children)/6 >= options.room}
                                         className="optionCounterButton" onClick={()=> {handleOption("children", "increase")}}>
                                             +
                                         </button>
@@ -184,9 +186,9 @@ const ChooseDates = ({toursLeft, setToursLeft}) => {
                                     <span className="optionCounterNumber">
                                         {options.room}
                                     </span>
-
+                                    
                                         <button
-                                        disabled={options.room <= 1}
+                                        disabled={(options.adult + options.children)/6  > (options.room - 1)}
                                         className="optionCounterButton" onClick={()=> {handleOption("room", "decrease")}}>
                                             -
                                         </button> 
