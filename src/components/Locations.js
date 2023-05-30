@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 const Locations = ({toursLeft}) => {
 
     const location = useLocation();
-    const { tourValue } = location.state;
+    const { tourValue, isLoading } = location.state;
+
+    console.log(isLoading);
 
     const innerplanet = useLocation();
     const { images } = innerplanet.state;
@@ -21,6 +23,9 @@ const Locations = ({toursLeft}) => {
 
     if (tourValue === 1) {
         return (
+            isLoading ?
+            <p>loading...</p>
+            :
             <section className="locations paddingTop wrapper">
                 <h2>Mercury, Venus, and Mars Tour!</h2>
                 <ul>
